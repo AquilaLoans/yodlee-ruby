@@ -7,6 +7,7 @@ SimpleCov.start do
 end
 
 require 'bundler/setup'
+require 'dotenv/load'
 require 'yodlee'
 
 RSpec.configure do |config|
@@ -32,4 +33,15 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = :random
   Kernel.srand config.seed
+end
+
+require_relative 'support/vcr'
+
+RSpec.shared_context 'configure', shared_context: :metadata do
+  before(:each) do
+    Yodlee.configure do |config|
+      config.cobrand_login    = ENV.fetch('YODLEE_COBRAND_LOGIN')
+      config.cobrand_password = ENV.fetch('YODLEE_COBRAND_PASSWORD')
+    end
+  end
 end

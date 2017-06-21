@@ -1,3 +1,9 @@
+require 'rest-client'
+require 'ostruct'
+require 'json'
+
+require 'yodlee/client'
+require 'yodlee/cobrand'
 require 'yodlee/configuration'
 require 'yodlee/version'
 

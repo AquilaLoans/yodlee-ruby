@@ -2,7 +2,7 @@ module Yodlee
 
   # @todo Add PRODUCTION_BASE_PATH
   class Configuration < OpenStruct
-    DEVELOPMENT_BASE_PATH = 'https://developer.api.yodlee.com/ysl/restserver/'
+    DEVELOPMENT_BASE_PATH = 'https://developer.api.yodlee.com:443/ysl/restserver'
 
     DEFAULTS = {
       cobrand_login:    nil,
