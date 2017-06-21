@@ -1,0 +1,18 @@
+# inherit_from: .rubocop_todo.yml
+AllCops:
+  Include:
+    - '**/Gemfile'
+    - '**/Rakefile'
+    - '**/*.rake'
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%':  ()
+    '%q': ()
+    '%Q': ()
+    '%i': []
+    '%I': []
+    '%r': ()
+    '%s': ()
+    '%w': []
+    '%W': []
+    '%x': ()
