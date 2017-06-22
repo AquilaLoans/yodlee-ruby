@@ -14,7 +14,9 @@ module Yodlee
       }
 
       response = Client.execute(:post, endpoint, cobrand_session, payload)
-      User.new(cobrand_session, JSON.parse(response.body)['user'])
+      raw_user =  JSON.parse(response.body)['user']
+
+      User.new(cobrand_session, raw_user)
     end
 
     def initialize(cobrand_session, params)
@@ -27,7 +29,20 @@ module Yodlee
     # POST   /v1/user/logout             User Logout
     # POST   /v1/user/samlRegister       Saml Register
     # PUT    /v1/user                    Update User Details
-    # GET    /v1/user/accessTokens       Get Access Tokens
+
+    # GET /v1/user/accessTokens
+    # @see https://developer.yodlee.com/apidocs/index.php#!/user/getAccessTokens
+    def access_tokens(appIds)
+      endpoint = '/v1/user/accessTokens'
+      appIds   = appIds.join(',') if appIds.is_a?(Array)
+
+      response = Client.execute(:get, endpoint, session, { appIds: appIds })
+
+      JSON.parse(response.body).dig('user', 'accessTokens').map do |access_token|
+        OpenStruct.new(access_token)
+      end
+    end
+
     # DELETE /v1/user/unregister         Delete User
     # POST   /v1/user/register           Register User
     # GET    /v1/user                    Get User Details

@@ -20,6 +20,16 @@ RSpec.describe Yodlee::User do
     end
   end
 
+  describe '#access_tokens' do
+    let(:appId) { '10003600' }
+    let(:access_tokens) { user.access_tokens(appId) }
+
+    it 'returns an Array of AccessTokens' do
+      expect(access_tokens).to      be_an Array
+      expect(access_tokens.first).to be_an OpenStruct
+    end
+  end
+
   describe '#accounts' do
     it 'returns an AccountDelegator' do
       expect(user.accounts).to be_a Yodlee::AccountDelegator
