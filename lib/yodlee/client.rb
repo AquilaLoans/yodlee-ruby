@@ -19,8 +19,7 @@ module Yodlee
         method:  method,
         url:     url,
         headers: headers,
-        payload: body,
-        log: Logger.new(STDOUT)
+        payload: body
       )
     end
 
@@ -34,11 +33,7 @@ module Yodlee
     def self.authorization_headers(session)
       return {} if session.nil? || session.empty?
 
-      tokens = sessions.map do |session|
-        session.join('=')
-      end
-
-      { 'Authorization' => "{#{tokens.join(',')}}" }
+      { 'Authorization' => '{' + session.map { |s| s.join('=') }.join(',') + '}' }
     end
   end
 end

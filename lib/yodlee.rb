@@ -5,6 +5,7 @@ require 'json'
 require 'yodlee/client'
 require 'yodlee/cobrand'
 require 'yodlee/configuration'
+require 'yodlee/user'
 require 'yodlee/version'
 
 module Yodlee

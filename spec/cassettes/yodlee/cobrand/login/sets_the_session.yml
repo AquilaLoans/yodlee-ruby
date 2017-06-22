@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Yodlee-Ref-Id:
-      - g1498085491299J4m27Z000000NLRYg-1
+      - H1498100883686u4j26l000000NLKYl-1
       Content-Type:
       - application/json;charset=UTF-8
       Transfer-Encoding:
@@ -35,13 +35,13 @@ http_interactions:
       Vary:
       - Accept-Encoding
       Date:
-      - Wed, 21 Jun 2017 22:51:31 GMT
+      - Thu, 22 Jun 2017 03:08:03 GMT
       Server:
       - Unknown
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAEWOMW7DMAxF95zC0NyBFCVKyuY6NtA56BxIFAUEMOyg7hbk7nWSoRv5Ph7574euM7KWn7zUr2q6Y4cACOTtxzPJt9t8lfx7XZd3aqh3Qz+mz4A9DsMpTJPDye8Sj2k8AZiXN6+SZ30July+z2+66bbtl574vu/vz+d/aCACW0C64FFq45DBQwVmB1hDssoEJQeJiMF69kAsVkAYIeRGWlqNVlpy+0CqkopyaQyBpfnkKKAvXsi3HCEVUIrJgjJ4plQlttAaO66gQM7sBR+Hxx+loAGQIAEAAA==
+        H4sIAAAAAAAAAEWOu27DMAxF93yFobkDKephZnMdG+gcdA5ESgICGHZQdwvy71WSoRt5Lg/J+6HrjG7yk9b8lU137BAAgbz9eCbpdluumn6v2/pODQ1uHCb+jDjgOJ7iPDucfZPCxNMJwLy8ZdO0lJdQ1sv3+U33su9t0xPfW/++fP6HBnoIFpAucJRgA1Yo0feZKAv5pIIUOLeBXLU4Ve6VE+WS2JYoolFahQGJoLmVpSIj19jX7Li6EkP1XqtITGKJyaJ3QlkzpFhLVa0csleGCGLag4/D4w+sP8VdIAEAAA==
     http_version: 
-  recorded_at: Wed, 21 Jun 2017 22:51:31 GMT
+  recorded_at: Thu, 22 Jun 2017 03:08:05 GMT
 recorded_with: VCR 3.0.3
