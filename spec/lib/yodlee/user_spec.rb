@@ -2,11 +2,7 @@ require 'spec_helper'
 
 RSpec.describe Yodlee::User do
   include_context 'configure'
-
-  let(:cobrand)  { Yodlee::Cobrand.login }
-  let(:login)    { ENV.fetch('YODLEE_USER_LOGIN') }
-  let(:password) { ENV.fetch('YODLEE_USER_PASSWORD') }
-  let(:user)     { described_class.login(cobrand.session, login, password) }
+  include_context 'session'
 
   describe '.login' do
     it 'returns a User' do
@@ -21,7 +17,7 @@ RSpec.describe Yodlee::User do
   end
 
   describe '#access_tokens' do
-    let(:appId) { '10003600' }
+    let(:appId)         { '10003600' }
     let(:access_tokens) { user.access_tokens(appId) }
 
     it 'returns an Array of AccessTokens' do
@@ -39,15 +35,13 @@ end
 
 RSpec.describe Yodlee::UserDelegator do
   include_context 'configure'
+  include_context 'session'
 
-  let(:cobrand)   { Yodlee::Cobrand.login }
-  let(:login)     { ENV.fetch('YODLEE_USER_LOGIN') }
-  let(:password)  { ENV.fetch('YODLEE_USER_PASSWORD') }
-  let(:delegator) { described_class.new(cobrand.session) }
+  let(:delegator) { described_class.new(cobrand_session) }
 
   describe '#login' do
     it 'delegates' do
-      expect(Yodlee::User).to receive(:login).with(cobrand.session, login, password)
+      expect(Yodlee::User).to receive(:login).with(cobrand_session, login, password)
       delegator.login(login, password)
     end
   end

@@ -5,6 +5,7 @@ module Yodlee
     def self.execute(method, endpoint, session = nil, payload = nil)
       url     = Yodlee.configuration.base_path + endpoint
       headers = default_headers(session)
+      payload = deep_format_payload(payload)
       body    = nil
 
       if payload
@@ -21,6 +22,22 @@ module Yodlee
         headers: headers,
         payload: body
       )
+    end
+
+    # @see https://github.com/rails/rails/blob/master/activesupport/lib/active_support/core_ext/hash/keys.rb#L143-L154
+    def self.deep_format_payload(object)
+      case object
+      when Hash
+        object.each_with_object({}) do |(key, value), result|
+          result[key.to_s.camelize(:lower)] = deep_format_payload(value)
+        end
+      when Array
+        object.map { |array| deep_format_payload(array) }
+      when Date, DateTime, Time
+        object.strftime('%Y-%m-%d')
+      else
+        object
+      end
     end
 
     def self.default_headers(session)

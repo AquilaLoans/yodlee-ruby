@@ -2,14 +2,14 @@ require 'spec_helper'
 
 RSpec.describe Yodlee::Account do
   include_context 'configure'
+  include_context 'session'
 
-  let(:cobrand)  { Yodlee::Cobrand.login }
-  let(:login)    { ENV.fetch('YODLEE_USER_LOGIN') }
-  let(:password) { ENV.fetch('YODLEE_USER_PASSWORD') }
-  let(:user)     { Yodlee::User.login(cobrand.session, login, password) }
+  let(:id)        { '10676951' }
+  let(:container) { 'bank' }
+  let(:account)   { described_class.find(user_session, id, container) }
 
   describe '.all' do
-    let(:collection) { described_class.all(user.session) }
+    let(:collection) { described_class.all(user_session) }
 
     it 'returns an Array of Accounts' do
       expect(collection).to       be_an Array
@@ -18,29 +18,27 @@ RSpec.describe Yodlee::Account do
   end
 
   describe '.find' do
-    let(:id)        { '10676951' }
-    let(:container) { 'bank' }
-    let(:item)      { described_class.find(user.session, id, container) }
-
     it 'returns an Account' do
-      expect(item).to be_a described_class
+      expect(account).to be_a described_class
+    end
+  end
+
+  describe '#transactions' do
+    it 'returns an TransactionDelegator' do
+      expect(account.transactions).to be_a Yodlee::TransactionDelegator
     end
   end
 end
 
 RSpec.describe Yodlee::AccountDelegator do
   include_context 'configure'
+  include_context 'session'
 
-  let(:cobrand)  { Yodlee::Cobrand.login }
-  let(:login)    { ENV.fetch('YODLEE_USER_LOGIN') }
-  let(:password) { ENV.fetch('YODLEE_USER_PASSWORD') }
-  let(:user)     { Yodlee::User.login(cobrand.session, login, password) }
-
-  let(:delegator) { described_class.new(user.session) }
+  let(:delegator) { described_class.new(user_session) }
 
   describe '#all' do
     it 'delegates' do
-      expect(Yodlee::Account).to receive(:all).with(user.session)
+      expect(Yodlee::Account).to receive(:all).with(user_session)
       delegator.all
     end
   end
@@ -50,7 +48,7 @@ RSpec.describe Yodlee::AccountDelegator do
     let(:container) { 'bank' }
 
     it 'delegates' do
-      expect(Yodlee::Account).to receive(:find).with(user.session, id, container)
+      expect(Yodlee::Account).to receive(:find).with(user_session, id, container)
       delegator.find(id, container)
     end
   end

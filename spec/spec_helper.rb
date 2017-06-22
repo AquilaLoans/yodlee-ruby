@@ -45,3 +45,13 @@ RSpec.shared_context 'configure', shared_context: :metadata do
     end
   end
 end
+
+RSpec.shared_context 'session', shared_context: :metadata do
+  let(:cobrand)      { Yodlee::Cobrand.login }
+  let(:login)        { ENV.fetch('YODLEE_USER_LOGIN') }
+  let(:password)     { ENV.fetch('YODLEE_USER_PASSWORD') }
+  let(:user)         { Yodlee::User.login(cobrand.session, login, password) }
+
+  let(:cobrand_session) { cobrand.session }
+  let(:user_session)    { user.session }
+end

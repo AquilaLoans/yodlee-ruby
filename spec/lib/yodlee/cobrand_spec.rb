@@ -2,8 +2,7 @@ require 'spec_helper'
 
 RSpec.describe Yodlee::Cobrand do
   include_context 'configure'
-
-  let(:cobrand) { described_class.login }
+  include_context 'session'
 
   describe '.login' do
     it 'returns a Cobrand' do

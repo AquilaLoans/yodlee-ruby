@@ -1,3 +1,4 @@
+require 'active_support/core_ext/string/inflections'
 require 'rest-client'
 require 'ostruct'
 require 'json'
@@ -6,6 +7,7 @@ require 'yodlee/account'
 require 'yodlee/client'
 require 'yodlee/cobrand'
 require 'yodlee/configuration'
+require 'yodlee/transaction'
 require 'yodlee/user'
 require 'yodlee/version'
 

@@ -35,6 +35,10 @@ module Yodlee
     # GET    /v1/accounts/historicalBalances               Get Historical Balances
     # POST   /v1/accounts                                  Add Manual Account
     # PUT    /v1/accounts/{accountId}                      Update Account
+
+    def transactions
+      @transactions = Yodlee::TransactionDelegator.new(@session, id, self.CONTAINER)
+    end
   end
 
   class AccountDelegator
