@@ -1,0 +1,93 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://developer.api.yodlee.com/ysl/restserver/v1/cobrand/login
+    body:
+      encoding: UTF-8
+      string: '{"cobrand":{"cobrandLogin":"YODLEE_COBRAND_LOGIN","cobrandPassword":"YODLEE_COBRAND_PASSWORD","locale":"en_US"}}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.6.0 x86_64) ruby/2.4.1p111
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '121'
+      Host:
+      - developer.api.yodlee.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Yodlee-Ref-Id:
+      - n1498168817533k4b27u000000NLQYV-1
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Content-Encoding:
+      - gzip
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Thu, 22 Jun 2017 22:00:17 GMT
+      Server:
+      - Unknown
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAEWOvW7DMAyE9zyFobkDKVE/zOY6NtA56BxIlAQEMOyg7hbk3SvHQxcCvMN3d89T1ylZ009c8ldW3blDAARj9cfuxMdjvkv8va/L4SrT09CP/Omxx2G4+GkinGyD3MjjBUC9uXmVOJc3UJbb9/VQt7JtLWmXn+0/mq//ooIATgOaG5wrQS65CCUg63MoElNg1sRIxhJLbaVSMQTLrkqAZBJitglS0La6it4LuITsHCQOJEIe4n4qRBu1CezQByHUnqHmzDVacrple6pZtYGv0+sPfRg09SABAAA=
+    http_version: 
+  recorded_at: Thu, 22 Jun 2017 22:00:17 GMT
+- request:
+    method: post
+    uri: https://developer.api.yodlee.com/ysl/restserver/v1/user/register
+    body:
+      encoding: UTF-8
+      string: '{"user":{"loginName":"USERNAME","password":"PASSWORD","email":"EXAMPLE@GOOGLE.COM"}}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.6.0 x86_64) ruby/2.4.1p111
+      Content-Type:
+      - application/json
+      Authorization:
+      - "{CobSession=08062013_0:f40dedec4b0457d8ecab899249143549cf510cf188596fc80b3b11d5b0b825f6f177c06b19660b984cc470ac470f0a5a23896178c412790fdd9fa546254974fd}"
+      Content-Length:
+      - '84'
+      Host:
+      - developer.api.yodlee.com
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Yodlee-Ref-Id:
+      - P1498168817717S4x27c000000NLHYp-1
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Content-Encoding:
+      - gzip
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Thu, 22 Jun 2017 22:00:17 GMT
+      Server:
+      - Unknown
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAD2MsQrCQBAF+3zFsrVFTkLutBMri9RiuXhPcyi7sDkjKP67RSDtDDPfhojhbn60DKY98aVtE29WPmCa5L6ok87yLJmqPaBUlORVR/PykVpMaYRk+NI6bnDoFev3HLpdCn1KIcbQH7r3NoKb3x+Fv6hCggAAAA==
+    http_version: 
+  recorded_at: Thu, 22 Jun 2017 22:00:17 GMT
+recorded_with: VCR 3.0.3

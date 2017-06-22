@@ -1,13 +1,28 @@
 module Yodlee
   class User < OpenStruct
 
+    # POST /v1/user/register
+    def self.create(cobrand_session, username, password, email, params = {})
+      endpoint = '/v1/user/register'
+      payload  = {
+        user: params.merge(
+          login_name: username,
+          password: password,
+          email: email
+        )
+      }
+
+      response = Client.execute(:post, endpoint, cobrand_session, payload)
+      User.new(cobrand_session, response[:user])
+    end
+
     # POST /v1/user/login
     # @see https://developer.yodlee.com/apidocs/index.php#!/user/authenticateUser
-    def self.login(cobrand_session, login, password)
+    def self.login(cobrand_session, username, password)
       endpoint = '/v1/user/login'
       payload  = {
         user: {
-          loginName: login,
+          login_name: username,
           password: password,
           locale: 'en_US'
         }
@@ -41,7 +56,6 @@ module Yodlee
     end
 
     # DELETE /v1/user/unregister         Delete User
-    # POST   /v1/user/register           Register User
     # GET    /v1/user                    Get User Details
     # GET    /v1/user/credentials/token
 
@@ -63,8 +77,12 @@ module Yodlee
       @session = cobrand_session
     end
 
-    def login(login, password)
-      User.login(@session, login, password)
+    def create(username, password, email, params = {})
+      User.create(@session, username, password, email, params = {})
+    end
+
+    def login(username, password)
+      User.login(@session, username, password)
     end
   end
 end
