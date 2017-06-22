@@ -1,0 +1,184 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://developer.api.yodlee.com/ysl/restserver/v1/cobrand/login
+    body:
+      encoding: UTF-8
+      string: '{"cobrand":{"cobrandLogin":"YODLEE_COBRAND_LOGIN","cobrandPassword":"YODLEE_COBRAND_PASSWORD","locale":"en_US"}}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.6.0 x86_64) ruby/2.4.1p111
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '121'
+      Host:
+      - developer.api.yodlee.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Yodlee-Ref-Id:
+      - g1498152326998g4l27t000000NLeYK-1
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Content-Encoding:
+      - gzip
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Thu, 22 Jun 2017 17:25:26 GMT
+      Server:
+      - Unknown
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAEWPvW7DMAyE9zyFoTkDaVo/zOY6NtA56BxIFAUEMOygzhbk3avEQ8f7jkcen4emMbKm37jk72yaU4MACGTb49uJ9/t8k/i4rcvuGuq7oR/5y2OPw3D209ThZGvIjTyeAcwnN68SZ/0EdLn+XHa66bbVTW/8rHq/fPmHBgK4FpCueNKiuXXKijZIppAdxQKBfFZJSUuF3tva1ebAKGAhEjn0dVCActGEFIpTSMziIxfIwonUe3Ic1NUfMUbntXRcxANXFay2kroUKzW14Ovw+gOAGzdwIAEAAA==
+    http_version: 
+  recorded_at: Thu, 22 Jun 2017 17:25:27 GMT
+- request:
+    method: post
+    uri: https://developer.api.yodlee.com/ysl/restserver/v1/user/login
+    body:
+      encoding: UTF-8
+      string: '{"user":{"loginName":"YODLEE_USER_LOGIN","password":"YODLEE_USER_LOGIN#123","locale":"en_US"}}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.6.0 x86_64) ruby/2.4.1p111
+      Content-Type:
+      - application/json
+      Authorization:
+      - "{cobSession=08062013_1:efed26e9e158cd38d63af0837decbbef8cd7750015d891c050a336178d6c03dfeb138f6e0b99c7a9f0dc9b3e773698e61031aa67ef49fc7091aa85e2cb4ba7ef}"
+      Content-Length:
+      - '94'
+      Host:
+      - developer.api.yodlee.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Yodlee-Ref-Id:
+      - t1498152327148t4M27E000000NLhYo-1
+      Accept-Charset:
+      - big5, big5-hkscs, euc-jp, euc-kr, gb18030, gb2312, gbk, ibm-thai, ibm00858,
+        ibm01140, ibm01141, ibm01142, ibm01143, ibm01144, ibm01145, ibm01146, ibm01147,
+        ibm01148, ibm01149, ibm037, ibm1026, ibm1047, ibm273, ibm277, ibm278, ibm280,
+        ibm284, ibm285, ibm290, ibm297, ibm420, ibm424, ibm437, ibm500, ibm775, ibm850,
+        ibm852, ibm855, ibm857, ibm860, ibm861, ibm862, ibm863, ibm864, ibm865, ibm866,
+        ibm868, ibm869, ibm870, ibm871, ibm918, iso-2022-cn, iso-2022-jp, iso-2022-jp-2,
+        iso-2022-kr, iso-8859-1, iso-8859-13, iso-8859-15, iso-8859-2, iso-8859-3,
+        iso-8859-4, iso-8859-5, iso-8859-6, iso-8859-7, iso-8859-8, iso-8859-9, jis_x0201,
+        jis_x0212-1990, koi8-r, koi8-u, shift_jis, tis-620, us-ascii, utf-16, utf-16be,
+        utf-16le, utf-32, utf-32be, utf-32le, utf-8, windows-1250, windows-1251, windows-1252,
+        windows-1253, windows-1254, windows-1255, windows-1256, windows-1257, windows-1258,
+        windows-31j, x-big5-hkscs-2001, x-big5-solaris, x-compound_text, x-euc-jp-linux,
+        x-euc-tw, x-eucjp-open, x-ibm1006, x-ibm1025, x-ibm1046, x-ibm1097, x-ibm1098,
+        x-ibm1112, x-ibm1122, x-ibm1123, x-ibm1124, x-ibm1364, x-ibm1381, x-ibm1383,
+        x-ibm300, x-ibm33722, x-ibm737, x-ibm833, x-ibm834, x-ibm856, x-ibm874, x-ibm875,
+        x-ibm921, x-ibm922, x-ibm930, x-ibm933, x-ibm935, x-ibm937, x-ibm939, x-ibm942,
+        x-ibm942c, x-ibm943, x-ibm943c, x-ibm948, x-ibm949, x-ibm949c, x-ibm950, x-ibm964,
+        x-ibm970, x-iscii91, x-iso-2022-cn-cns, x-iso-2022-cn-gb, x-iso-8859-11, x-jis0208,
+        x-jisautodetect, x-johab, x-macarabic, x-maccentraleurope, x-maccroatian,
+        x-maccyrillic, x-macdingbat, x-macgreek, x-machebrew, x-maciceland, x-macroman,
+        x-macromania, x-macsymbol, x-macthai, x-macturkish, x-macukraine, x-ms932_0213,
+        x-ms950-hkscs, x-ms950-hkscs-xp, x-mswin-936, x-pck, x-sjis_0213, x-utf-16le-bom,
+        x-utf-32be-bom, x-utf-32le-bom, x-windows-50220, x-windows-50221, x-windows-874,
+        x-windows-949, x-windows-950, x-windows-iso2022jp
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '382'
+      Date:
+      - Thu, 22 Jun 2017 17:25:26 GMT
+      Server:
+      - Unknown
+    body:
+      encoding: UTF-8
+      string: '{"user":{"id":10130113,"loginName":"YODLEE_USER_LOGIN","name":{"first":"Zane","last":"Pickett"},"roleType":"INDIVIDUAL","session":{"userSession":"08062013_0:f4fbf652ea3c690374cb7b04da5ab9b103c2a5c8267cb2d531ca70445a7ddeb42f4e28ce78a9e6e34822e459ff1e116cc6afb13a58eb56c689eaa2afa009c746"},"preferences":{"currency":"USD","timeZone":"PST","dateFormat":"MM/dd/yyyy","locale":"en_US"}}}'
+    http_version: 
+  recorded_at: Thu, 22 Jun 2017 17:25:27 GMT
+- request:
+    method: get
+    uri: https://developer.api.yodlee.com/ysl/restserver/v1/transactions?fromDate=2010-01-01
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.6.0 x86_64) ruby/2.4.1p111
+      Content-Type:
+      - application/json
+      Authorization:
+      - "{userSession=08062013_0:f4fbf652ea3c690374cb7b04da5ab9b103c2a5c8267cb2d531ca70445a7ddeb42f4e28ce78a9e6e34822e459ff1e116cc6afb13a58eb56c689eaa2afa009c746,cobSession=08062013_1:efed26e9e158cd38d63af0837decbbef8cd7750015d891c050a336178d6c03dfeb138f6e0b99c7a9f0dc9b3e773698e61031aa67ef49fc7091aa85e2cb4ba7ef}"
+      Host:
+      - developer.api.yodlee.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Yodlee-Ref-Id:
+      - s1498152327430R4G26k000000NLAYk-1
+      Link:
+      - ": /ysl/restserver/v1/transactions/count?fromDate=2010-01-01;rel=count"
+      Accept-Charset:
+      - big5, big5-hkscs, euc-jp, euc-kr, gb18030, gb2312, gbk, ibm-thai, ibm00858,
+        ibm01140, ibm01141, ibm01142, ibm01143, ibm01144, ibm01145, ibm01146, ibm01147,
+        ibm01148, ibm01149, ibm037, ibm1026, ibm1047, ibm273, ibm277, ibm278, ibm280,
+        ibm284, ibm285, ibm290, ibm297, ibm420, ibm424, ibm437, ibm500, ibm775, ibm850,
+        ibm852, ibm855, ibm857, ibm860, ibm861, ibm862, ibm863, ibm864, ibm865, ibm866,
+        ibm868, ibm869, ibm870, ibm871, ibm918, iso-2022-cn, iso-2022-jp, iso-2022-jp-2,
+        iso-2022-kr, iso-8859-1, iso-8859-13, iso-8859-15, iso-8859-2, iso-8859-3,
+        iso-8859-4, iso-8859-5, iso-8859-6, iso-8859-7, iso-8859-8, iso-8859-9, jis_x0201,
+        jis_x0212-1990, koi8-r, koi8-u, shift_jis, tis-620, us-ascii, utf-16, utf-16be,
+        utf-16le, utf-32, utf-32be, utf-32le, utf-8, windows-1250, windows-1251, windows-1252,
+        windows-1253, windows-1254, windows-1255, windows-1256, windows-1257, windows-1258,
+        windows-31j, x-big5-hkscs-2001, x-big5-solaris, x-compound_text, x-euc-jp-linux,
+        x-euc-tw, x-eucjp-open, x-ibm1006, x-ibm1025, x-ibm1046, x-ibm1097, x-ibm1098,
+        x-ibm1112, x-ibm1122, x-ibm1123, x-ibm1124, x-ibm1364, x-ibm1381, x-ibm1383,
+        x-ibm300, x-ibm33722, x-ibm737, x-ibm833, x-ibm834, x-ibm856, x-ibm874, x-ibm875,
+        x-ibm921, x-ibm922, x-ibm930, x-ibm933, x-ibm935, x-ibm937, x-ibm939, x-ibm942,
+        x-ibm942c, x-ibm943, x-ibm943c, x-ibm948, x-ibm949, x-ibm949c, x-ibm950, x-ibm964,
+        x-ibm970, x-iscii91, x-iso-2022-cn-cns, x-iso-2022-cn-gb, x-iso-8859-11, x-jis0208,
+        x-jisautodetect, x-johab, x-macarabic, x-maccentraleurope, x-maccroatian,
+        x-maccyrillic, x-macdingbat, x-macgreek, x-machebrew, x-maciceland, x-macroman,
+        x-macromania, x-macsymbol, x-macthai, x-macturkish, x-macukraine, x-ms932_0213,
+        x-ms950-hkscs, x-ms950-hkscs-xp, x-mswin-936, x-pck, x-sjis_0213, x-utf-16le-bom,
+        x-utf-32be-bom, x-utf-32le-bom, x-windows-50220, x-windows-50221, x-windows-874,
+        x-windows-949, x-windows-950, x-windows-iso2022jp
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Content-Encoding:
+      - gzip
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Thu, 22 Jun 2017 17:25:31 GMT
+      Server:
+      - Unknown
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+    http_version: 
+  recorded_at: Thu, 22 Jun 2017 17:25:31 GMT
+recorded_with: VCR 3.0.3
