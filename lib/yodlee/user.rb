@@ -48,6 +48,14 @@ module Yodlee
     def accounts
       @accounts ||= Yodlee::AccountDelegator.new(session)
     end
+
+    def to_json
+      to_h.to_json
+    end
+
+    def self.from_json(json)
+      User.new({}, Client.deep_format_response(JSON.parse(json)))
+    end
   end
 
   class UserDelegator

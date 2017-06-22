@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://developer.api.yodlee.com/ysl/restserver/v1/cobrand/login
+    body:
+      encoding: UTF-8
+      string: '{"cobrand":{"cobrandLogin":"YODLEE_COBRAND_LOGIN","cobrandPassword":"YODLEE_COBRAND_PASSWORD","locale":"en_US"}}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.6.0 x86_64) ruby/2.4.1p111
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '121'
+      Host:
+      - developer.api.yodlee.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Yodlee-Ref-Id:
+      - j1498158607293V4r26u000000NLrYr-1
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Content-Encoding:
+      - gzip
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Thu, 22 Jun 2017 19:10:07 GMT
+      Server:
+      - Unknown
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAEWOu47CQAxFe74imprC9rwydNmQSFujrZHHnpGQogRt6BD/voEUW95zdez7PDSNkSX/8qzfappTgwAI1tPx3fD9Pt2EH7dl3ltjO9d3Q/qK2GHfn+M4Ohz9JoUhDWcA8/GmRXgqH6HM15/LTteyrtulN35uef98+YcGWggEaK9wAsttqxkUCbxizCQEriK7rDaBrTlnqalqaRE8SsFqYyTkwhQcJY6MyUEIDjxAhholRp+tVJdSZYmlBeXqucQkJFoJs+UUHBOq1WC2ga/D6w9wqRpqIAEAAA==
+    http_version: 
+  recorded_at: Thu, 22 Jun 2017 19:10:07 GMT
+recorded_with: VCR 3.0.3

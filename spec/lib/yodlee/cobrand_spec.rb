@@ -20,4 +20,25 @@ RSpec.describe Yodlee::Cobrand do
       expect(cobrand.users).to be_a Yodlee::UserDelegator
     end
   end
+
+  describe 'serialization and deserilization' do
+    let(:cobrand_json) { cobrand.to_json }
+    let(:clone)        { described_class.from_json(cobrand_json) }
+
+    it 'correctly recreates the same object' do
+      expect(clone).to eq cobrand
+    end
+
+    describe '#to_json' do
+      it 'returns a string' do
+        expect(cobrand_json).to be_a String
+      end
+    end
+
+    describe '.from_json' do
+      it 'returns a Cobrand' do
+        expect(clone).to be_a described_class
+      end
+    end
+  end
 end

@@ -28,5 +28,13 @@ module Yodlee
     def users
       @users ||= Yodlee::UserDelegator.new(session)
     end
+
+    def to_json
+      to_h.to_json
+    end
+
+    def self.from_json(json)
+      Cobrand.new(Client.deep_format_response(JSON.parse(json)))
+    end
   end
 end

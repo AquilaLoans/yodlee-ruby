@@ -31,6 +31,27 @@ RSpec.describe Yodlee::User do
       expect(user.accounts).to be_a Yodlee::AccountDelegator
     end
   end
+
+  describe 'serialization and deserilization' do
+    let(:user_json) { user.to_json }
+    let(:clone)     { described_class.from_json(user_json) }
+
+    it 'correctly recreates the same object' do
+      expect(clone).to eq user
+    end
+
+    describe '#to_json' do
+      it 'returns a string' do
+        expect(user_json).to be_a String
+      end
+    end
+
+    describe '.from_json' do
+      it 'returns a User' do
+        expect(clone).to be_a described_class
+      end
+    end
+  end
 end
 
 RSpec.describe Yodlee::UserDelegator do
