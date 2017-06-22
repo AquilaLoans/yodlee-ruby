@@ -11,8 +11,8 @@ RSpec.describe Yodlee::User do
 
     it 'sets the session' do
       expect(user.session).to be_a Hash
-      expect(user.session['cobSession']).to be_a String
-      expect(user.session['userSession']).to be_a String
+      expect(user.session[:cob_session]).to be_a String
+      expect(user.session[:user_session]).to be_a String
     end
   end
 

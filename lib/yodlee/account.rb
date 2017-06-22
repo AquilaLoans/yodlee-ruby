@@ -11,8 +11,7 @@ module Yodlee
       endpoint = '/v1/accounts'
 
       response = Client.execute(:get, endpoint, user_session)
-
-      JSON.parse(response.body)['account'].map do |raw_account|
+      response[:account].map do |raw_account|
         Account.new(user_session, raw_account)
       end
     end
@@ -23,10 +22,8 @@ module Yodlee
       endpoint = "/v1/accounts/#{id}"
       payload  = { container: container }
 
-      response    = Client.execute(:get, endpoint, user_session, payload)
-      raw_account = JSON.parse(response.body)['account'].first
-
-      Account.new(user_session, raw_account)
+      response = Client.execute(:get, endpoint, user_session, payload)
+      Account.new(user_session, response[:account].first)
     end
 
     # POST   /v1/accounts/{accountId}                      Update Account Status

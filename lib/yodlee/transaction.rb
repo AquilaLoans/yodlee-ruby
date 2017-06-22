@@ -11,7 +11,7 @@ module Yodlee
       endpoint = '/v1/transactions'
 
       response         = Client.execute(:get, endpoint, user_session, options)
-      raw_transactions = JSON.parse(response.body)['transaction'] || []
+      raw_transactions = response[:transaction] || []
 
       raw_transactions.map do |raw_transaction|
         Transaction.new(user_session, raw_transaction)
@@ -24,8 +24,7 @@ module Yodlee
       endpoint = '/v1/transactions/count'
 
       response = Client.execute(:get, endpoint, user_session, options)
-
-      JSON.parse(response.body).dig('transaction', 'TOTAL', 'count') || 0
+      response.dig(:transaction, :total, :count) || 0
     end
 
     # GET    /v1/transactions/categories                Get Transaction Category List

@@ -14,7 +14,8 @@ module Yodlee
       }
 
       response = Client.execute(:post, endpoint, nil, payload)
-      Cobrand.new(JSON.parse(response.body))
+      response[:id] = response.delete(:cobrand_id)
+      Cobrand.new(response)
     end
 
     # POST   /v1/cobrand/logout                                  Cobrand Logout

@@ -11,7 +11,7 @@ RSpec.describe Yodlee::Cobrand do
 
     it 'sets the session' do
       expect(cobrand.session).to be_a Hash
-      expect(cobrand.session['cobSession']).to be_a String
+      expect(cobrand.session[:cob_session]).to be_a String
     end
   end
 

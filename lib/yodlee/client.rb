@@ -16,12 +16,14 @@ module Yodlee
         end
       end
 
-      RestClient::Request.execute(
+      raw_response = RestClient::Request.execute(
         method:  method,
         url:     url,
         headers: headers,
         payload: body
       )
+
+      deep_format_response(JSON.parse(raw_response.body))
     end
 
     # @see https://github.com/rails/rails/blob/master/activesupport/lib/active_support/core_ext/hash/keys.rb#L143-L154
@@ -40,6 +42,22 @@ module Yodlee
       end
     end
 
+    def self.deep_format_response(object)
+      case object
+      when Hash
+        object.each_with_object({}) do |(key, value), result|
+          result[key.underscore.to_sym] = deep_format_response(value)
+        end
+      when Array
+        object.map { |array| deep_format_response(array) }
+      when String
+        return Date.parse(object) if /^\d{4}-\d{2}-\d{2}$/.match(object)
+        object
+      else
+        object
+      end
+    end
+
     def self.default_headers(session)
       {
         'Accept'       => 'application/json',
@@ -50,7 +68,7 @@ module Yodlee
     def self.authorization_headers(session)
       return {} if session.nil? || session.empty?
 
-      { 'Authorization' => '{' + session.map { |s| s.join('=') }.join(',') + '}' }
+      { 'Authorization' => '{' + session.map { |k,v| [k.to_s.camelize, v].join('=') }.join(',') + '}' }
     end
   end
 end

@@ -14,9 +14,7 @@ module Yodlee
       }
 
       response = Client.execute(:post, endpoint, cobrand_session, payload)
-      raw_user =  JSON.parse(response.body)['user']
-
-      User.new(cobrand_session, raw_user)
+      User.new(cobrand_session, response[:user])
     end
 
     def initialize(cobrand_session, params)
@@ -37,8 +35,7 @@ module Yodlee
       appIds   = appIds.join(',') if appIds.is_a?(Array)
 
       response = Client.execute(:get, endpoint, session, { appIds: appIds })
-
-      JSON.parse(response.body).dig('user', 'accessTokens').map do |access_token|
+      response.dig(:user, :access_tokens).map do |access_token|
         OpenStruct.new(access_token)
       end
     end
