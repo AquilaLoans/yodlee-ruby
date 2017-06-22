@@ -1,6 +1,5 @@
 module Yodlee
   class Cobrand < OpenStruct
-
     # POST /v1/cobrand/login
     # @see https://developer.yodlee.com/apidocs/index.php#!/cobrand/authenticateCoBrand
     def self.login(login = Yodlee.configuration.cobrand_login, password = Yodlee.configuration.cobrand_password)

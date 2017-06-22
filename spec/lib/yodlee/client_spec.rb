@@ -18,7 +18,7 @@ RSpec.describe Yodlee::Client do
     end
 
     context 'with an array' do
-      let(:payload) { { dates:[ {from_date: DateTime.parse('2017-05-25')} ] } }
+      let(:payload) { { dates: [{ from_date: DateTime.parse('2017-05-25') }] } }
       let(:formated_payload) { described_class.deep_format_payload(payload) }
 
       it 'coverts keys into lower camelcase' do
@@ -65,7 +65,7 @@ RSpec.describe Yodlee::Client do
     end
 
     context 'with an array' do
-      let(:response) { { 'dates' => [ {'fromDate' => '2017-05-25'} ] } }
+      let(:response) { { 'dates' => [{ 'fromDate' => '2017-05-25' }] } }
       let(:formated_response) { described_class.deep_format_response(response) }
 
       it 'coverts keys into lower camelcase' do

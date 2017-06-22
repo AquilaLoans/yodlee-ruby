@@ -1,6 +1,5 @@
 module Yodlee
   class User < OpenStruct
-
     # POST /v1/user/register
     def self.create(cobrand_session, username, password, email, params = {})
       endpoint = '/v1/user/register'
@@ -34,7 +33,7 @@ module Yodlee
 
     def initialize(cobrand_session, params)
       super(params)
-      self.session.merge!(cobrand_session)
+      session.merge!(cobrand_session)
     end
 
     # POST   /v1/user/credentials        Update Password
@@ -49,7 +48,7 @@ module Yodlee
       endpoint = '/v1/user/accessTokens'
       appIds   = appIds.join(',') if appIds.is_a?(Array)
 
-      response = Client.execute(:get, endpoint, session, { appIds: appIds })
+      response = Client.execute(:get, endpoint, session, appIds: appIds)
       response.dig(:user, :access_tokens).map do |access_token|
         OpenStruct.new(access_token)
       end
@@ -78,7 +77,7 @@ module Yodlee
     end
 
     def create(username, password, email, params = {})
-      User.create(@session, username, password, email, params = {})
+      User.create(@session, username, password, email, params)
     end
 
     def login(username, password)
