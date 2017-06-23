@@ -11,9 +11,20 @@ RSpec.describe Yodlee::Account do
   describe '.all' do
     let(:collection) { described_class.all(user_session) }
 
-    it 'returns an Array of Accounts' do
-      expect(collection).to       be_an Array
-      expect(collection.first).to be_a  described_class
+    context 'with out transactions' do
+      xit 'returns an empty array' do
+        expect(collection).to be_an Array
+        expect(collection).to be_empty
+      end
+    end
+
+    context 'with accounts' do
+      let(:collection) { described_class.all(user_session) }
+
+      it 'returns an Array of Accounts' do
+        expect(collection).to       be_an Array
+        expect(collection.first).to be_a  described_class
+      end
     end
   end
 

@@ -11,7 +11,9 @@ module Yodlee
       endpoint = '/v1/accounts'
 
       response = Client.execute(:get, endpoint, user_session)
-      response[:account].map do |raw_account|
+      raw_accounts = response[:account] || []
+
+      raw_accounts.map do |raw_account|
         Account.new(user_session, raw_account)
       end
     end
