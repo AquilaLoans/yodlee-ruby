@@ -42,6 +42,7 @@ RSpec.shared_context 'configure', shared_context: :metadata do
     Yodlee.configure do |config|
       config.cobrand_login    = ENV.fetch('YODLEE_COBRAND_LOGIN')
       config.cobrand_password = ENV.fetch('YODLEE_COBRAND_PASSWORD')
+      config.base_path        = ENV.fetch('YODLEE_BASE_PATH', Yodlee::Configuration::DEVELOPMENT_BASE_PATH)
     end
   end
 end
