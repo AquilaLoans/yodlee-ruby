@@ -67,7 +67,7 @@ module Yodlee
     def self.authorization_headers(session)
       return {} if session.nil? || session.empty?
 
-      { 'Authorization' => '{' + session.map { |k, v| [k.to_s.camelize, v].join('=') }.join(',') + '}' }
+      { 'Authorization' => '{' + session.map { |k, v| [k.to_s.camelize(:lower), v].join('=') }.join(',') + '}' }
     end
   end
 end
