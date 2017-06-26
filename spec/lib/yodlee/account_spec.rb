@@ -6,7 +6,7 @@ RSpec.describe Yodlee::Account do
 
   let(:id)        { '10676951' }
   let(:container) { 'bank' }
-  let(:account)   { described_class.find(user_session, id, container) }
+  let(:account)   { described_class.find(user_session, container, id) }
 
   describe '.all' do
     let(:collection) { described_class.all(user_session) }
@@ -59,8 +59,8 @@ RSpec.describe Yodlee::AccountDelegator do
     let(:container) { 'bank' }
 
     it 'delegates' do
-      expect(Yodlee::Account).to receive(:find).with(user_session, id, container)
-      delegator.find(id, container)
+      expect(Yodlee::Account).to receive(:find).with(user_session, container, id)
+      delegator.find(container, id)
     end
   end
 end

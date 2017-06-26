@@ -20,7 +20,7 @@ module Yodlee
 
     # GET /v1/accounts/{accountId}
     # @see https://developer.yodlee.com/apidocs/index.php#!/accounts/getAccountDetails
-    def self.find(user_session, id, container)
+    def self.find(user_session, container, id)
       endpoint = "/v1/accounts/#{id}"
       payload  = { container: container }
 
@@ -49,8 +49,8 @@ module Yodlee
       Account.all(@session)
     end
 
-    def find(id, container)
-      Account.find(@session, id, container)
+    def find(container, id)
+      Account.find(@session, container, id)
     end
   end
 end
