@@ -1,4 +1,4 @@
-# Yodlee
+# Yodlee [![Build Status](https://img.shields.io/travis/AquilaLoans/yodlee-ruby.svg)](https://travis-ci.org/AquilaLoans/yodlee-ruby)
 
 ## Installation
 
