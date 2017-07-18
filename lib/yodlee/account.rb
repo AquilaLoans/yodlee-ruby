@@ -11,14 +11,16 @@ module Yodlee
       endpoint = '/v1/accounts'
 
       response = Client.execute(:get, endpoint, user_session)
-      response[:account].map do |raw_account|
+      raw_accounts = response[:account] || []
+
+      raw_accounts.map do |raw_account|
         Account.new(user_session, raw_account)
       end
     end
 
     # GET /v1/accounts/{accountId}
     # @see https://developer.yodlee.com/apidocs/index.php#!/accounts/getAccountDetails
-    def self.find(user_session, id, container)
+    def self.find(user_session, container, id)
       endpoint = "/v1/accounts/#{id}"
       payload  = { container: container }
 
@@ -47,8 +49,8 @@ module Yodlee
       Account.all(@session)
     end
 
-    def find(id, container)
-      Account.find(@session, id, container)
+    def find(container, id)
+      Account.find(@session, container, id)
     end
   end
 end

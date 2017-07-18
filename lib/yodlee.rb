@@ -4,6 +4,7 @@ require 'ostruct'
 require 'json'
 
 require 'yodlee/account'
+require 'yodlee/app_ids'
 require 'yodlee/client'
 require 'yodlee/cobrand'
 require 'yodlee/configuration'

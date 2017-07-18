@@ -42,7 +42,7 @@ http_interactions:
       encoding: ASCII-8BIT
       string: !binary |-
         H4sIAAAAAAAAAEWOu2rDQBBFe3+F2NrFPHY0u+4UWYLUJrXZJxiEZCJ3xv8e2SpS3nM5M/d5aBqTlvgb5vydTXNqEACBhY7vJtzv0y2Fx22Z99ZwZ/tu8F+KHfb9WcfR4iib1A5+OAOYjzctKUzlI5T5+nPZ6VrWdbv0xs8t758v/9CAg5YA+Uon5oq+kILDSG3MbsNSY0FJBVKLmS1R8USQEWx1ofqkoprEsfesNSsXIYzVJYo15VxCAOditC6TtN5achKjVglMHAS8aoASLDBnBrMNfB1ef+7pf9ggAQAA
-    http_version: 
+    http_version:
   recorded_at: Thu, 22 Jun 2017 03:57:54 GMT
 - request:
     method: post
@@ -108,7 +108,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"user":{"id":10130113,"loginName":"YODLEE_USER_LOGIN","name":{"first":"Zane","last":"Pickett"},"roleType":"INDIVIDUAL","session":{"userSession":"08062013_0:529339004ee7e7b031c04824c7f14212f41786b6eab6efaccad82a8c31c977ad39a48122d142933143c6934afa21bc88aafef9a0eb1597697f6190d6a04a887c"},"preferences":{"currency":"USD","timeZone":"PST","dateFormat":"MM/dd/yyyy","locale":"en_US"}}}'
-    http_version: 
+    http_version:
   recorded_at: Thu, 22 Jun 2017 03:57:54 GMT
 - request:
     method: get
@@ -177,6 +177,6 @@ http_interactions:
       encoding: ASCII-8BIT
       string: !binary |-
         H4sIAAAAAAAAAO2Ub2/aMBDGv0rll1Oo7Dh/aN6lCRpRKUwkZRLTNJnElGgmQbZTgRDffU4CXaIFRKtpmqblBVJy95zvnvuZPSBxnBeZBM6XPfAm48gNxoMpcMCCZN+BBjY8f0kTyt06LUiAgyCGCBlYO2nHZE2VIhqEke9GLgKvkVASWQgVc70omA1+BsbFekG5CpgQ90xLx9vtVkVT4QpBVTOSF1RTPTCSxar2HpB13eUdNIxbu6+BuOCcZvFO1XgKfXBQ4qo3y7buTF0DjAj5tEmIpOoz0CGye9Dq6XoEkQNtB6F5eV4WsyKhQTam8nPO5ep08mnscl6ALMNADS+O8/rk+SZMJS2neiEpIwtG73/t2DIN81zL9RfZobow59HCaLcpuwjdWTD+GFbmPZKsIAw4S8KEGiLmtBzfVz9NC2CEbMe0HdwvLeB0yalYpdkyL88X1ca8PFESqB1fH6kQ5LksMnkAtbXTWnbJ3EaaKyVdb+T53IxuT7lhrKoWrF0ZR9ByDOwga15asMqZ2sMnni9TRit0s2one5CkYsPIrlIfjRpWyeBw+HrQfhfjb0UcoesRvwZw9BcB/g66r2TbGw68B0X3f7jfAbcyKEmlR3jyNsS96cAPohvPnfqXKC+42gW4D0ajbzN3FPgd4H9oPH0LGU36j1vswB9Z2Lo1jMsXABt/+gK0wJxEQ+Vx41p4RKxaf/oQduL9ml8tpzU2tnCXROaSsLL8KF23FWfOqAVV/VGatazFsFvyL18uveoZOdieV7fkB3muHgXyCAAA
-    http_version: 
+    http_version:
   recorded_at: Thu, 22 Jun 2017 03:57:55 GMT
 recorded_with: VCR 3.0.3
