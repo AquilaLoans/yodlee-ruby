@@ -6,14 +6,25 @@ RSpec.describe Yodlee::Account do
 
   let(:id)        { '10676951' }
   let(:container) { 'bank' }
-  let(:account)   { described_class.find(user_session, id, container) }
+  let(:account)   { described_class.find(user_session, container, id) }
 
   describe '.all' do
     let(:collection) { described_class.all(user_session) }
 
-    it 'returns an Array of Accounts' do
-      expect(collection).to       be_an Array
-      expect(collection.first).to be_a  described_class
+    context 'with out transactions' do
+      xit 'returns an empty array' do
+        expect(collection).to be_an Array
+        expect(collection).to be_empty
+      end
+    end
+
+    context 'with accounts' do
+      let(:collection) { described_class.all(user_session) }
+
+      it 'returns an Array of Accounts' do
+        expect(collection).to       be_an Array
+        expect(collection.first).to be_a  described_class
+      end
     end
   end
 
@@ -48,8 +59,8 @@ RSpec.describe Yodlee::AccountDelegator do
     let(:container) { 'bank' }
 
     it 'delegates' do
-      expect(Yodlee::Account).to receive(:find).with(user_session, id, container)
-      delegator.find(id, container)
+      expect(Yodlee::Account).to receive(:find).with(user_session, container, id)
+      delegator.find(container, id)
     end
   end
 end

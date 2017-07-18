@@ -4,10 +4,10 @@ RSpec.describe Yodlee::User do
   include_context 'configure'
   include_context 'session'
 
-  xdescribe '.create' do
-    let(:username) { 'USERNAME' }
-    let(:password) { 'PASSWORD' }
-    let(:email)    { 'EXAMPLE@GOOGLE.COM' }
+  describe '.create' do
+    let(:username) { 'username_04' }
+    let(:password) { 'Pa$$w0rd!' }
+    let(:email)    { 'example@example.com' }
     let(:user)     { described_class.create(cobrand_session, username, password, email) }
 
     it 'returns a User' do
@@ -38,7 +38,7 @@ RSpec.describe Yodlee::User do
     let(:access_tokens) { user.access_tokens(appId) }
 
     it 'returns an Array of AccessTokens' do
-      expect(access_tokens).to      be_an Array
+      expect(access_tokens).to be_an Array
       expect(access_tokens.first).to be_an OpenStruct
     end
   end
