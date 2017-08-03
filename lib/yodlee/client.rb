@@ -22,7 +22,9 @@ module Yodlee
         payload: body
       )
 
-      deep_format_response(JSON.parse(raw_response.body.presence || 'null'))
+      return nil if raw_response.body.empty?
+
+      deep_format_response(JSON.parse(raw_response.body))
     end
 
     # @see https://github.com/rails/rails/blob/master/activesupport/lib/active_support/core_ext/hash/keys.rb#L143-L154
