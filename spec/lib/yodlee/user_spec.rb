@@ -43,15 +43,15 @@ RSpec.describe Yodlee::User do
     end
   end
 
-  describe '#unregister' do
+  describe '#destroy' do
     it 'returns true if the user has been deleted' do
-      expect(user.unregister).to eq true
+      expect(user.destroy).to eq true
     end
 
     context 'without valid user' do
       it 'throws an error' do
         expect do
-          user.unregister
+          user.destroy
         end.to raise_error(RestClient::Unauthorized)
       end
     end
