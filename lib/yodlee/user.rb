@@ -55,6 +55,14 @@ module Yodlee
     end
 
     # DELETE /v1/user/unregister         Delete User
+    # @see https://developer.yodlee.com/apidocs/index.php#!/user/unregister
+    def unregister
+      endpoint = '/v1/user/unregister'
+
+      response = Client.execute(:delete, endpoint, session)
+      true
+    end
+
     # GET    /v1/user                    Get User Details
     # GET    /v1/user/credentials/token
 
