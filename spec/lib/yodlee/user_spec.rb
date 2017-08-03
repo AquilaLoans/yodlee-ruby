@@ -43,6 +43,20 @@ RSpec.describe Yodlee::User do
     end
   end
 
+  describe '#destroy' do
+    it 'returns true if the user has been deleted' do
+      expect(user.destroy).to eq true
+    end
+
+    context 'without valid user' do
+      it 'throws an error' do
+        expect do
+          user.destroy
+        end.to raise_error(RestClient::Unauthorized)
+      end
+    end
+  end
+
   describe '#accounts' do
     it 'returns an AccountDelegator' do
       expect(user.accounts).to be_a Yodlee::AccountDelegator
