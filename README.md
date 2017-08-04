@@ -1,4 +1,4 @@
-# Yodlee [![Build Status](https://img.shields.io/travis/AquilaLoans/yodlee-ruby.svg)](https://travis-ci.org/AquilaLoans/yodlee-ruby)
+# Yodlee [![Build Status](https://img.shields.io/travis/AquilaLoans/yodlee-ruby.svg)](https://travis-ci.org/AquilaLoans/yodlee-ruby) [![Code Climate](https://img.shields.io/codeclimate/github/AquilaLoans/yodlee-ruby.svg)](https://codeclimate.com/github/AquilaLoans/yodlee-ruby) [![Test Coverage](https://img.shields.io/codeclimate/coverage/github/AquilaLoans/yodlee-ruby.svg)](https://codeclimate.com/github/AquilaLoans/yodlee-ruby/coverage)
 
 ## Installation
 
