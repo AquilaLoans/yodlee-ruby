@@ -20,7 +20,7 @@ VCR.configure do |config|
   end
 
   config.filter_sensitive_data('ysl/restserver') do |interaction|
-    URI(interaction.request.uri).path[/ysl\/[\w-]+/]
+    URI(interaction.request.uri).path[%r(ysl\/[\w-]+)]
   end
 
   config.filter_sensitive_data('YODLEE_COBRAND_LOGIN')    { ENV['YODLEE_COBRAND_LOGIN'] }

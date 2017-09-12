@@ -1,5 +1,7 @@
 module Yodlee
   module Client
+    URL_PAYLOAD_TYPES = %i[get delete head].freeze
+
     # session = { cobSession, userSession }
     def self.execute(method, endpoint, session = nil, payload = nil)
       url     = Yodlee.configuration.base_path + endpoint
@@ -8,7 +10,7 @@ module Yodlee
       body    = nil
 
       if payload
-        if %i[get delete head].include?(method)
+        if URL_PAYLOAD_TYPES.include?(method)
           headers[:params] = payload
         else
           body = JSON.dump(payload)
@@ -52,7 +54,7 @@ module Yodlee
       when Array
         object.map { |array| deep_format_response(array) }
       when String
-        return Date.parse(object) if /^\d{4}-\d{2}-\d{2}$/.match(object)
+        return Date.parse(object) if object =~ /^\d{4}-\d{2}-\d{2}$/
         object
       else
         object
