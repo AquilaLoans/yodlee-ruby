@@ -28,6 +28,10 @@ module Yodlee
       @users ||= Yodlee::UserDelegator.new(session)
     end
 
+    def providers
+      @providers ||= Yodlee::ProviderDelegator.new(session)
+    end
+
     def to_json
       to_h.to_json
     end
