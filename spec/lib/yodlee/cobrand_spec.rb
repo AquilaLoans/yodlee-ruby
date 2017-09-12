@@ -21,6 +21,12 @@ RSpec.describe Yodlee::Cobrand do
     end
   end
 
+  describe '#providers' do
+    it 'returns a ProviderDelegator' do
+      expect(cobrand.providers).to be_a Yodlee::ProviderDelegator
+    end
+  end
+
   describe 'serialization and deserilization' do
     let(:cobrand_json) { cobrand.to_json }
     let(:clone)        { described_class.from_json(cobrand_json) }
