@@ -59,7 +59,7 @@ module Yodlee
     def destroy
       endpoint = '/v1/user/unregister'
 
-      response = Client.execute(:delete, endpoint, session)
+      Client.execute(:delete, endpoint, session)
       true
     end
 

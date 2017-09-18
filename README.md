@@ -1,4 +1,4 @@
-# Yodlee [![Build Status](https://img.shields.io/travis/AquilaLoans/yodlee-ruby.svg)](https://travis-ci.org/AquilaLoans/yodlee-ruby)
+# Yodlee [![Build Status](https://img.shields.io/travis/AquilaLoans/yodlee-ruby.svg)](https://travis-ci.org/AquilaLoans/yodlee-ruby) [![Code Climate](https://img.shields.io/codeclimate/github/AquilaLoans/yodlee-ruby.svg)](https://codeclimate.com/github/AquilaLoans/yodlee-ruby) [![Test Coverage](https://img.shields.io/codeclimate/coverage/github/AquilaLoans/yodlee-ruby.svg)](https://codeclimate.com/github/AquilaLoans/yodlee-ruby/coverage) [![Gemnasium](https://img.shields.io/gemnasium/AquilaLoans/yodlee-ruby.svg)](https://gemnasium.com/github.com/AquilaLoans/yodlee-ruby)
 
 ## Installation
 
@@ -29,4 +29,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/yodlee.
+Bug reports and pull requests are welcome on GitHub at https://github.com/AquilaLoans/yodlee-ruby.
