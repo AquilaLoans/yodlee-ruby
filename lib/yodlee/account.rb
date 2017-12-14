@@ -29,11 +29,18 @@ module Yodlee
     end
 
     # POST   /v1/accounts/{accountId}                      Update Account Status
-    # DELETE /v1/accounts/{accountId}                      Delete Account
     # GET    /v1/accounts/investmentPlan/investmentOptions Get Investment Options
     # GET    /v1/accounts/historicalBalances               Get Historical Balances
     # POST   /v1/accounts                                  Add Manual Account
     # PUT    /v1/accounts/{accountId}                      Update Account
+
+    # DELETE /v1/accounts/{accountId}
+    # @see https://developer.yodlee.com/apidocs/index.php#!/accounts/deleteAccountDetail
+    def destroy
+      endpoint = "/v1/accounts/#{id}"
+
+      Client.execute(:delete, endpoint, @session)
+    end
 
     def transactions
       @transactions = Yodlee::TransactionDelegator.new(@session, id, self.CONTAINER)
