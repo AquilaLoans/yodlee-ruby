@@ -34,6 +34,14 @@ RSpec.describe Yodlee::Account do
     end
   end
 
+  describe '#destroy' do
+    let(:id) { '10690362' }
+
+    it 'deletes the account' do
+      expect { account.destroy }.not_to raise_error(StandardError)
+    end
+  end
+
   describe '#transactions' do
     it 'returns an TransactionDelegator' do
       expect(account.transactions).to be_a Yodlee::TransactionDelegator
