@@ -12,6 +12,7 @@ require 'yodlee/provider'
 require 'yodlee/transaction'
 require 'yodlee/user'
 require 'yodlee/version'
+require 'yodlee/error_codes'
 
 module Yodlee
   class << self
