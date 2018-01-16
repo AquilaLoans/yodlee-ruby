@@ -47,6 +47,14 @@ RSpec.describe Yodlee::Account do
       expect(account.transactions).to be_a Yodlee::TransactionDelegator
     end
   end
+
+  describe '#provider_account' do
+    let(:id) { '10690361' }
+
+    it 'returns an ProviderAccount' do
+      expect(account.provider_account).to be_a Yodlee::ProviderAccount
+    end
+  end
 end
 
 RSpec.describe Yodlee::AccountDelegator do
