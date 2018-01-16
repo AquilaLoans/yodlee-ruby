@@ -63,6 +63,12 @@ RSpec.describe Yodlee::User do
     end
   end
 
+  describe '#provider_accounts' do
+    it 'returns an ProviderAccountDelegator' do
+      expect(user.provider_accounts).to be_a Yodlee::ProviderAccountDelegator
+    end
+  end
+
   describe 'serialization and deserilization' do
     let(:user_json) { user.to_json }
     let(:clone)     { described_class.from_json(user_json) }

@@ -32,14 +32,6 @@ module Yodlee
     # GET  /v1/providers/token               Get Token
   end
 
-  # GET    /v1/providerAccounts/{providerAccountId}              Get Provider Account Details
-  # PUT    /v1/providerAccounts                                  Update Account
-  # DELETE /v1/providerAccounts/{providerAccountId}              Delete Provider Account
-  # GET    /v1/providerAccounts                                  Get Provider Accounts
-  # POST   /v1/providerAccounts                                  Add Account
-  # PUT    /v1/providerAccounts/verification                     Verification Service
-  # GET    /v1/providerAccounts/verification/{providerAccountId}
-
   class ProviderDelegator
     def initialize(cobrand_session)
       @session = cobrand_session
