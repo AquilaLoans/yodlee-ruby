@@ -70,6 +70,10 @@ module Yodlee
       @accounts ||= Yodlee::AccountDelegator.new(session)
     end
 
+    def provider_accounts
+      @provider_accounts ||= Yodlee::ProviderAccountDelegator.new(session)
+    end
+
     def to_json
       to_h.to_json
     end
