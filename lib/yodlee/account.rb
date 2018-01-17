@@ -43,7 +43,11 @@ module Yodlee
     end
 
     def transactions
-      @transactions = Yodlee::TransactionDelegator.new(@session, id, self.CONTAINER)
+      @transactions ||= Yodlee::TransactionDelegator.new(@session, id, self.CONTAINER)
+    end
+
+    def provider_account
+      @provider_account ||= Yodlee::ProviderAccountDelegator.new(@session).find(provider_account_id)
     end
   end
 
