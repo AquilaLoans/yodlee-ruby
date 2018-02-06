@@ -10,7 +10,7 @@ RSpec.describe Yodlee::ProviderAccount do
   describe '.all' do
     let(:collection) { described_class.all(user_session) }
 
-    it 'returns an Array of Accounts' do
+    it 'returns an Array of ProviderAccounts' do
       expect(collection).to       be_an Array
       expect(collection.first).to be_a  described_class
     end
@@ -25,6 +25,15 @@ RSpec.describe Yodlee::ProviderAccount do
   describe '#refresh' do
     it 'returns a ProviderAccount' do
       expect(account_provider.refresh).to be_a described_class
+    end
+  end
+
+  describe '#accounts' do
+    let(:collection) { account_provider.accounts }
+
+    it 'returns an Array of Accounts' do
+      expect(collection).to       be_an Array
+      expect(collection.first).to be_a  Yodlee::Account
     end
   end
 end
