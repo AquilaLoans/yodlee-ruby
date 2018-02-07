@@ -42,6 +42,13 @@ module Yodlee
     # DELETE /v1/providerAccounts/{providerAccountId}              Delete Provider Account
     # PUT    /v1/providerAccounts/verification                     Verification Service
     # GET    /v1/providerAccounts/verification/{providerAccountId}
+
+    # @note This is a synthetic interface and does not directly map to any api endpoints
+    def accounts
+      Yodlee::Account.all(@session).select do |account|
+        account.provider_account_id == id
+      end
+    end
   end
 
   class ProviderAccountDelegator
