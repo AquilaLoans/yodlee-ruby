@@ -28,6 +28,13 @@ RSpec.describe Yodlee::ProviderAccount do
     end
   end
 
+  describe '#destroy' do
+    it 'destroys a ProviderAccount' do
+      expect(account_provider.destroy).to be nil
+      expect { described_class.find(user_session, id) }.to raise_error(RestClient::BadRequest)
+    end
+  end
+
   describe '#accounts' do
     let(:collection) { account_provider.accounts }
 

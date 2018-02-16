@@ -37,9 +37,16 @@ module Yodlee
       ProviderAccount.new(user_session, response[:provider_account].first)
     end
 
+    # DELETE /v1/providerAccounts/{providerAccountId}
+    # @see https://developer.yodlee.com/apidocs/index.php#!/providerAccounts/deleteAccount
+    def destroy
+      endpoint = "/v1/providerAccounts/#{id}"
+
+      Client.execute(:delete, endpoint, @session)
+    end
+
     # POST   /v1/providerAccounts                                  Add Account
     # PUT    /v1/providerAccounts                                  Update Account
-    # DELETE /v1/providerAccounts/{providerAccountId}              Delete Provider Account
     # PUT    /v1/providerAccounts/verification                     Verification Service
     # GET    /v1/providerAccounts/verification/{providerAccountId}
 
