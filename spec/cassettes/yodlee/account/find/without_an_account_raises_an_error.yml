@@ -1,0 +1,160 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://developer.api.yodlee.com/ysl/restserver/v1/cobrand/login
+    body:
+      encoding: UTF-8
+      string: '{"cobrand":{"cobrandLogin":"YODLEE_COBRAND_LOGIN","cobrandPassword":"YODLEE_COBRAND_PASSWORD","locale":"en_US"}}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin17.4.0 x86_64) ruby/2.5.0p0
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '121'
+      Host:
+      - developer.api.yodlee.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Yodlee-Ref-Id:
+      - t1519155194321i4x26K000000NLeYc
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Tue, 20 Feb 2018 19:33:14 GMT
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "cobrandId" : 10010352,
+          "applicationId" : "3A4CAE9B71A1CCD7FF41F51006E9ED00",
+          "locale" : "en_US",
+          "session" : {
+            "cobSession" : "08062013_1:53b43f0b0d6fe510c1b468eea62023949878235216e4f554078e209a9bf120234eff2f51b84a7ca5c4823ea2751892e1d005e32c8b06bbc01072948b0e6888e0"
+          }
+        }
+    http_version: 
+  recorded_at: Tue, 20 Feb 2018 19:33:14 GMT
+- request:
+    method: post
+    uri: https://developer.api.yodlee.com/ysl/restserver/v1/user/login
+    body:
+      encoding: UTF-8
+      string: '{"user":{"loginName":"YODLEE_USER_LOGIN","password":"YODLEE_USER_LOGIN#123","locale":"en_US"}}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin17.4.0 x86_64) ruby/2.5.0p0
+      Content-Type:
+      - application/json
+      Authorization:
+      - "{cobSession=08062013_1:53b43f0b0d6fe510c1b468eea62023949878235216e4f554078e209a9bf120234eff2f51b84a7ca5c4823ea2751892e1d005e32c8b06bbc01072948b0e6888e0}"
+      Content-Length:
+      - '94'
+      Host:
+      - developer.api.yodlee.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Yodlee-Ref-Id:
+      - G1519155194603w4P26r000000NLVYW
+      Accept-Charset:
+      - big5, big5-hkscs, cesu-8, euc-jp, euc-kr, gb18030, gb2312, gbk, ibm-thai,
+        ibm00858, ibm01140, ibm01141, ibm01142, ibm01143, ibm01144, ibm01145, ibm01146,
+        ibm01147, ibm01148, ibm01149, ibm037, ibm1026, ibm1047, ibm273, ibm277, ibm278,
+        ibm280, ibm284, ibm285, ibm290, ibm297, ibm420, ibm424, ibm437, ibm500, ibm775,
+        ibm850, ibm852, ibm855, ibm857, ibm860, ibm861, ibm862, ibm863, ibm864, ibm865,
+        ibm866, ibm868, ibm869, ibm870, ibm871, ibm918, iso-2022-cn, iso-2022-jp,
+        iso-2022-jp-2, iso-2022-kr, iso-8859-1, iso-8859-13, iso-8859-15, iso-8859-2,
+        iso-8859-3, iso-8859-4, iso-8859-5, iso-8859-6, iso-8859-7, iso-8859-8, iso-8859-9,
+        jis_x0201, jis_x0212-1990, koi8-r, koi8-u, shift_jis, tis-620, us-ascii, utf-16,
+        utf-16be, utf-16le, utf-32, utf-32be, utf-32le, utf-8, windows-1250, windows-1251,
+        windows-1252, windows-1253, windows-1254, windows-1255, windows-1256, windows-1257,
+        windows-1258, windows-31j, x-big5-hkscs-2001, x-big5-solaris, x-compound_text,
+        x-euc-jp-linux, x-euc-tw, x-eucjp-open, x-ibm1006, x-ibm1025, x-ibm1046, x-ibm1097,
+        x-ibm1098, x-ibm1112, x-ibm1122, x-ibm1123, x-ibm1124, x-ibm1166, x-ibm1364,
+        x-ibm1381, x-ibm1383, x-ibm300, x-ibm33722, x-ibm737, x-ibm833, x-ibm834,
+        x-ibm856, x-ibm874, x-ibm875, x-ibm921, x-ibm922, x-ibm930, x-ibm933, x-ibm935,
+        x-ibm937, x-ibm939, x-ibm942, x-ibm942c, x-ibm943, x-ibm943c, x-ibm948, x-ibm949,
+        x-ibm949c, x-ibm950, x-ibm964, x-ibm970, x-iscii91, x-iso-2022-cn-cns, x-iso-2022-cn-gb,
+        x-iso-8859-11, x-jis0208, x-jisautodetect, x-johab, x-macarabic, x-maccentraleurope,
+        x-maccroatian, x-maccyrillic, x-macdingbat, x-macgreek, x-machebrew, x-maciceland,
+        x-macroman, x-macromania, x-macsymbol, x-macthai, x-macturkish, x-macukraine,
+        x-ms932_0213, x-ms950-hkscs, x-ms950-hkscs-xp, x-mswin-936, x-pck, x-sjis_0213,
+        x-utf-16le-bom, x-utf-32be-bom, x-utf-32le-bom, x-windows-50220, x-windows-50221,
+        x-windows-874, x-windows-949, x-windows-950, x-windows-iso2022jp
+      Content-Type:
+      - application/json;charset=ISO-8859-1
+      Content-Length:
+      - '382'
+      Date:
+      - Tue, 20 Feb 2018 19:33:14 GMT
+    body:
+      encoding: UTF-8
+      string: '{"user":{"id":10130112,"loginName":"YODLEE_USER_LOGIN","name":{"first":"Zane","last":"Pickett"},"roleType":"INDIVIDUAL","session":{"userSession":"08062013_0:b04ea6f30dbac8ddcd00a0372bd07bd5a8befcf34fbd4bfa4015d792d3b314a8010204f18195b523727f3cbbd815e8dbe022e8d8e198f75c77de766bb24b7809"},"preferences":{"currency":"USD","timeZone":"PST","dateFormat":"MM/dd/yyyy","locale":"en_US"}}}'
+    http_version: 
+  recorded_at: Tue, 20 Feb 2018 19:33:14 GMT
+- request:
+    method: get
+    uri: https://developer.api.yodlee.com/ysl/restserver/v1/accounts/10676951?container=bank
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin17.4.0 x86_64) ruby/2.5.0p0
+      Content-Type:
+      - application/json
+      Authorization:
+      - "{userSession=08062013_0:b04ea6f30dbac8ddcd00a0372bd07bd5a8befcf34fbd4bfa4015d792d3b314a8010204f18195b523727f3cbbd815e8dbe022e8d8e198f75c77de766bb24b7809,cobSession=08062013_1:53b43f0b0d6fe510c1b468eea62023949878235216e4f554078e209a9bf120234eff2f51b84a7ca5c4823ea2751892e1d005e32c8b06bbc01072948b0e6888e0}"
+      Host:
+      - developer.api.yodlee.com
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Connection:
+      - keep-alive
+      Yodlee-Ref-Id:
+      - t1519155208756N4F26u000000NLGYN
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Tue, 20 Feb 2018 19:33:29 GMT
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "errorCode" : "Y807",
+          "errorMessage" : "Resource not found",
+          "referenceCode" : "j1519155208600e4W26r"
+        }
+    http_version: 
+  recorded_at: Tue, 20 Feb 2018 19:33:29 GMT
+recorded_with: VCR 3.0.3

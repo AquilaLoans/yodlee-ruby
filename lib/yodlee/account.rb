@@ -25,7 +25,7 @@ module Yodlee
       payload  = { container: container }
 
       response = Client.execute(:get, endpoint, user_session, payload)
-      Account.new(user_session, response[:account].first)
+      Account.new(user_session, response[:account].first) unless response[:account].empty?
     end
 
     # POST   /v1/accounts/{accountId}                      Update Account Status
