@@ -32,6 +32,12 @@ RSpec.describe Yodlee::Account do
     it 'returns an Account' do
       expect(account).to be_a described_class
     end
+
+    context 'without an account' do
+      it 'raises an error' do
+        expect { account }.to raise_error(RestClient::BadRequest)
+      end
+    end
   end
 
   describe '#destroy' do
