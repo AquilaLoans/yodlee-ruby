@@ -42,7 +42,7 @@ RSpec.configure do |config|
              .underscore
              .strip
              .gsub(/[\.#]/, '/')
-             .gsub(%r([^\w/]+), '_')
+             .gsub(%r{[^\w/]+}, '_')
              .gsub(%(/$), '')
              .gsub('_/', '/')
 

@@ -4,7 +4,7 @@ RSpec.describe Yodlee::Transaction do
   include_context 'configure'
   include_context 'session'
 
-  let(:from_date) { DateTime.parse('2010-01-01') }
+  let(:from_date) { Time.parse('2010-01-01') }
 
   describe '.all' do
     let(:collection) { described_class.all(user_session) }
