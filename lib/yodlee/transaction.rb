@@ -5,10 +5,10 @@ module Yodlee
       super(params)
     end
 
-    # GET /v1/transactions
+    # GET /transactions
     # @see https://developer.yodlee.com/apidocs/index.php#!/transactions/getTransactions
     def self.all(user_session, options = {})
-      endpoint = '/v1/transactions'
+      endpoint = '/transactions'
 
       response         = Client.execute(:get, endpoint, user_session, options)
       raw_transactions = response[:transaction] || []
@@ -18,27 +18,26 @@ module Yodlee
       end
     end
 
-    # GET /v1/transactions/count
+    # GET /transactions/count
     # @see https://developer.yodlee.com/apidocs/index.php#!/transactions/getTransactionCount
     def self.count(user_session, options = {})
-      endpoint = '/v1/transactions/count'
+      endpoint = '/transactions/count'
 
       response = Client.execute(:get, endpoint, user_session, options)
       response.dig(:transaction, :total, :count) || 0
     end
 
-    # GET    /v1/transactions/categories                Get Transaction Category List
-    # POST   /v1/transactions/categories                Create Category
-    # PUT    /v1/transactions/categories                Update Category
-    # DELETE /v1/transactions/categories/{categoryId}   Delete Category
-    # POST   /v1/transactions/{transactionId}           Update Transaction Category
-    # PUT    /v1/transactions/{transactionId}           Update Transaction
-    # GET    /v1/transactions/categories/rules          Get Transaction Categorization Rules
-    # POST   /v1/transactions/categories/rules          Create Transaction Categorization Rule
-    # PUT    /v1/transactions/categories/rules/{ruleId} Update Transaction Categorization Rules
-    # DELETE /v1/transactions/categories/rules/{ruleId} Delete Transaction Categorization Rule
-    # POST   /v1/transactions/categories/rules/{ruleId} Run Transaction Categorization Rule
-    # POST   /v1/transactions/categories/rules
+    # GET    /transactions/categories/rules          Get Transaction Categorization Rules
+    # POST   /transactions/categories/rules          Create Transaction Categorization Rule
+    # PUT    /transactions/categories/rules/{ruleId} Update Transaction Categorization Rules
+    # DELETE /transactions/categories/rules/{ruleId} Delete Transaction Categorization Rule
+    # POST   /transactions/categories/rules/{ruleId} Run Transaction Categorization Rule
+    # POST   /transactions/categories/rules          Run All Transaction Categorization Rules
+    # DELETE /transactions/categories/{categoryId}   Delete Category
+    # PUT    /transactions/{transactionId}           Update Transaction
+    # GET    /transactions/categories                Get Transaction Category List
+    # POST   /transactions/categories                Create Category
+    # PUT    /transactions/categories                Update Category
   end
 
   class TransactionDelegator

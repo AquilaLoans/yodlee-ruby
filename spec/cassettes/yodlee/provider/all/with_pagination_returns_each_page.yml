@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://developer.api.yodlee.com/ysl/restserver/v1/cobrand/login
+    uri: https://developer.api.yodlee.com/ysl/cobrand/login
     body:
       encoding: UTF-8
       string: '{"cobrand":{"cobrandLogin":"YODLEE_COBRAND_LOGIN","cobrandPassword":"YODLEE_COBRAND_PASSWORD","locale":"en_US"}}'
@@ -12,11 +12,15 @@ http_interactions:
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - rest-client/2.0.2 (darwin16.6.0 x86_64) ruby/2.4.1p111
+      - rest-client/2.0.2 (darwin17.4.0 x86_64) ruby/2.5.0p0
       Content-Type:
       - application/json
+      Api-Version:
+      - '1.1'
+      Cobrand-Name:
+      - restserver
       Content-Length:
-      - '121'
+      - '144'
       Host:
       - developer.api.yodlee.com
   response:
@@ -24,95 +28,32 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Connection:
+      - keep-alive
       Yodlee-Ref-Id:
-      - I1505255440585Z4n27x000000NLSYH
-      Content-Type:
-      - application/json;charset=UTF-8
+      - w1524513787615l4V27s000000NLoYJ
       Transfer-Encoding:
       - chunked
-      Content-Encoding:
-      - gzip
-      Vary:
-      - Accept-Encoding
+      Content-Type:
+      - application/json;charset=UTF-8
       Date:
-      - Tue, 12 Sep 2017 22:30:40 GMT
-      Server:
-      - Unknown
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAAEWOu2rDQBBFe3+F2DrFvPYhd4osQWqT2oxmV2AQkonSGf971naRcs7l3Ln3Q9M426YfXfNXds2xQQAE9vTxTPR2W66mv9dtfaeOO+m7of2M2GHfn+I4Co6+SmFohxOAe3nLZrqUl1DWy/f5Tfey77Xpie/1fn8+/0MHCQIB8gWPLccZJFOLnOaAMc3kvSYVQxHyWaxljiyYPKlXqpPZQgFCE8HQJm+Ik81KgZTSVGzyCQi8BS0WwHAGSoKsGDNP5CWygmBtzVI0uTrwcXj8AdGlxkkgAQAA
-    http_version: 
-  recorded_at: Tue, 12 Sep 2017 22:30:40 GMT
-- request:
-    method: post
-    uri: https://developer.api.yodlee.com/ysl/restserver/v1/user/login
+      - Mon, 23 Apr 2018 20:03:07 GMT
     body:
       encoding: UTF-8
-      string: '{"user":{"loginName":"YODLEE_USER_LOGIN","password":"YODLEE_USER_LOGIN#123","locale":"en_US"}}'
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.2 (darwin16.6.0 x86_64) ruby/2.4.1p111
-      Content-Type:
-      - application/json
-      Authorization:
-      - "{cobSession=08062013_1:937f04d29138f6178f255a8a4c14425d4c9337341852a5a20353c6e021c4416985c11bcfa262a28becb580205c6aec60c1f028413a17d3b25473a041933d4ea8}"
-      Content-Length:
-      - '94'
-      Host:
-      - developer.api.yodlee.com
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Yodlee-Ref-Id:
-      - e1505255440777A4l26R000000NLwYY
-      Accept-Charset:
-      - big5, big5-hkscs, euc-jp, euc-kr, gb18030, gb2312, gbk, ibm-thai, ibm00858,
-        ibm01140, ibm01141, ibm01142, ibm01143, ibm01144, ibm01145, ibm01146, ibm01147,
-        ibm01148, ibm01149, ibm037, ibm1026, ibm1047, ibm273, ibm277, ibm278, ibm280,
-        ibm284, ibm285, ibm290, ibm297, ibm420, ibm424, ibm437, ibm500, ibm775, ibm850,
-        ibm852, ibm855, ibm857, ibm860, ibm861, ibm862, ibm863, ibm864, ibm865, ibm866,
-        ibm868, ibm869, ibm870, ibm871, ibm918, iso-2022-cn, iso-2022-jp, iso-2022-jp-2,
-        iso-2022-kr, iso-8859-1, iso-8859-13, iso-8859-15, iso-8859-2, iso-8859-3,
-        iso-8859-4, iso-8859-5, iso-8859-6, iso-8859-7, iso-8859-8, iso-8859-9, jis_x0201,
-        jis_x0212-1990, koi8-r, koi8-u, shift_jis, tis-620, us-ascii, utf-16, utf-16be,
-        utf-16le, utf-32, utf-32be, utf-32le, utf-8, windows-1250, windows-1251, windows-1252,
-        windows-1253, windows-1254, windows-1255, windows-1256, windows-1257, windows-1258,
-        windows-31j, x-big5-hkscs-2001, x-big5-solaris, x-compound_text, x-euc-jp-linux,
-        x-euc-tw, x-eucjp-open, x-ibm1006, x-ibm1025, x-ibm1046, x-ibm1097, x-ibm1098,
-        x-ibm1112, x-ibm1122, x-ibm1123, x-ibm1124, x-ibm1364, x-ibm1381, x-ibm1383,
-        x-ibm300, x-ibm33722, x-ibm737, x-ibm833, x-ibm834, x-ibm856, x-ibm874, x-ibm875,
-        x-ibm921, x-ibm922, x-ibm930, x-ibm933, x-ibm935, x-ibm937, x-ibm939, x-ibm942,
-        x-ibm942c, x-ibm943, x-ibm943c, x-ibm948, x-ibm949, x-ibm949c, x-ibm950, x-ibm964,
-        x-ibm970, x-iscii91, x-iso-2022-cn-cns, x-iso-2022-cn-gb, x-iso-8859-11, x-jis0208,
-        x-jisautodetect, x-johab, x-macarabic, x-maccentraleurope, x-maccroatian,
-        x-maccyrillic, x-macdingbat, x-macgreek, x-machebrew, x-maciceland, x-macroman,
-        x-macromania, x-macsymbol, x-macthai, x-macturkish, x-macukraine, x-ms932_0213,
-        x-ms950-hkscs, x-ms950-hkscs-xp, x-mswin-936, x-pck, x-sjis_0213, x-utf-16le-bom,
-        x-utf-32be-bom, x-utf-32le-bom, x-windows-50220, x-windows-50221, x-windows-874,
-        x-windows-949, x-windows-950, x-windows-iso2022jp
-      Content-Type:
-      - application/json;charset=ISO-8859-1
-      Content-Length:
-      - '382'
-      Date:
-      - Tue, 12 Sep 2017 22:30:40 GMT
-      Server:
-      - Unknown
-    body:
-      encoding: UTF-8
-      string: '{"user":{"id":10130112,"loginName":"YODLEE_USER_LOGIN","name":{"first":"Zane","last":"Pickett"},"roleType":"INDIVIDUAL","session":{"userSession":"08062013_2:f60c45a652d7f859dc09ec2ed7b384652c80bf6d36f56b1f016bc8ddf5675a0830a653dbe6759661a45f688da29aa34a02a6bb4718dc5c2e7a90504892bd9989"},"preferences":{"currency":"USD","timeZone":"PST","dateFormat":"MM/dd/yyyy","locale":"en_US"}}}'
+      string: |-
+        {
+          "cobrandId" : 10010352,
+          "applicationId" : "3A4CAE9B71A1CCD7FF41F51006E9ED00",
+          "locale" : "en_US",
+          "session" : {
+            "cobSession" : "08062013_1:22399bc7a8d968f75e2df18ade09aebe546597d28a043f29b3bda5b2c88a7ae2b41ee522f54c65f9fafd4b4d5b5aeee3cc7d7031e1c1050ee7219746b09c35c4"
+          }
+        }
     http_version: 
-  recorded_at: Tue, 12 Sep 2017 22:30:40 GMT
+  recorded_at: Mon, 23 Apr 2018 20:03:07 GMT
 - request:
     method: get
-    uri: https://developer.api.yodlee.com/ysl/restserver/v1/providers?top=2
+    uri: https://developer.api.yodlee.com/ysl/providers?top=2
     body:
       encoding: US-ASCII
       string: ''
@@ -122,11 +63,15 @@ http_interactions:
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - rest-client/2.0.2 (darwin16.6.0 x86_64) ruby/2.4.1p111
+      - rest-client/2.0.2 (darwin17.4.0 x86_64) ruby/2.5.0p0
       Content-Type:
       - application/json
+      Api-Version:
+      - '1.1'
+      Cobrand-Name:
+      - restserver
       Authorization:
-      - "{userSession=08062013_2:f60c45a652d7f859dc09ec2ed7b384652c80bf6d36f56b1f016bc8ddf5675a0830a653dbe6759661a45f688da29aa34a02a6bb4718dc5c2e7a90504892bd9989,cobSession=08062013_1:937f04d29138f6178f255a8a4c14425d4c9337341852a5a20353c6e021c4416985c11bcfa262a28becb580205c6aec60c1f028413a17d3b25473a041933d4ea8}"
+      - "{cobSession=08062013_1:22399bc7a8d968f75e2df18ade09aebe546597d28a043f29b3bda5b2c88a7ae2b41ee522f54c65f9fafd4b4d5b5aeee3cc7d7031e1c1050ee7219746b09c35c4}"
       Host:
       - developer.api.yodlee.com
   response:
@@ -134,51 +79,50 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Connection:
+      - keep-alive
       Yodlee-Ref-Id:
-      - o1505255441047F4g27D000000NLdYX
+      - f1524513787729F4X27L000000NLFYp
       Accept-Charset:
-      - big5, big5-hkscs, euc-jp, euc-kr, gb18030, gb2312, gbk, ibm-thai, ibm00858,
-        ibm01140, ibm01141, ibm01142, ibm01143, ibm01144, ibm01145, ibm01146, ibm01147,
-        ibm01148, ibm01149, ibm037, ibm1026, ibm1047, ibm273, ibm277, ibm278, ibm280,
-        ibm284, ibm285, ibm290, ibm297, ibm420, ibm424, ibm437, ibm500, ibm775, ibm850,
-        ibm852, ibm855, ibm857, ibm860, ibm861, ibm862, ibm863, ibm864, ibm865, ibm866,
-        ibm868, ibm869, ibm870, ibm871, ibm918, iso-2022-cn, iso-2022-jp, iso-2022-jp-2,
-        iso-2022-kr, iso-8859-1, iso-8859-13, iso-8859-15, iso-8859-2, iso-8859-3,
-        iso-8859-4, iso-8859-5, iso-8859-6, iso-8859-7, iso-8859-8, iso-8859-9, jis_x0201,
-        jis_x0212-1990, koi8-r, koi8-u, shift_jis, tis-620, us-ascii, utf-16, utf-16be,
-        utf-16le, utf-32, utf-32be, utf-32le, utf-8, windows-1250, windows-1251, windows-1252,
-        windows-1253, windows-1254, windows-1255, windows-1256, windows-1257, windows-1258,
-        windows-31j, x-big5-hkscs-2001, x-big5-solaris, x-compound_text, x-euc-jp-linux,
-        x-euc-tw, x-eucjp-open, x-ibm1006, x-ibm1025, x-ibm1046, x-ibm1097, x-ibm1098,
-        x-ibm1112, x-ibm1122, x-ibm1123, x-ibm1124, x-ibm1364, x-ibm1381, x-ibm1383,
-        x-ibm300, x-ibm33722, x-ibm737, x-ibm833, x-ibm834, x-ibm856, x-ibm874, x-ibm875,
-        x-ibm921, x-ibm922, x-ibm930, x-ibm933, x-ibm935, x-ibm937, x-ibm939, x-ibm942,
-        x-ibm942c, x-ibm943, x-ibm943c, x-ibm948, x-ibm949, x-ibm949c, x-ibm950, x-ibm964,
-        x-ibm970, x-iscii91, x-iso-2022-cn-cns, x-iso-2022-cn-gb, x-iso-8859-11, x-jis0208,
-        x-jisautodetect, x-johab, x-macarabic, x-maccentraleurope, x-maccroatian,
-        x-maccyrillic, x-macdingbat, x-macgreek, x-machebrew, x-maciceland, x-macroman,
-        x-macromania, x-macsymbol, x-macthai, x-macturkish, x-macukraine, x-ms932_0213,
-        x-ms950-hkscs, x-ms950-hkscs-xp, x-mswin-936, x-pck, x-sjis_0213, x-utf-16le-bom,
-        x-utf-32be-bom, x-utf-32le-bom, x-windows-50220, x-windows-50221, x-windows-874,
-        x-windows-949, x-windows-950, x-windows-iso2022jp
+      - big5, big5-hkscs, cesu-8, euc-jp, euc-kr, gb18030, gb2312, gbk, ibm-thai,
+        ibm00858, ibm01140, ibm01141, ibm01142, ibm01143, ibm01144, ibm01145, ibm01146,
+        ibm01147, ibm01148, ibm01149, ibm037, ibm1026, ibm1047, ibm273, ibm277, ibm278,
+        ibm280, ibm284, ibm285, ibm290, ibm297, ibm420, ibm424, ibm437, ibm500, ibm775,
+        ibm850, ibm852, ibm855, ibm857, ibm860, ibm861, ibm862, ibm863, ibm864, ibm865,
+        ibm866, ibm868, ibm869, ibm870, ibm871, ibm918, iso-2022-cn, iso-2022-jp,
+        iso-2022-jp-2, iso-2022-kr, iso-8859-1, iso-8859-13, iso-8859-15, iso-8859-2,
+        iso-8859-3, iso-8859-4, iso-8859-5, iso-8859-6, iso-8859-7, iso-8859-8, iso-8859-9,
+        jis_x0201, jis_x0212-1990, koi8-r, koi8-u, shift_jis, tis-620, us-ascii, utf-16,
+        utf-16be, utf-16le, utf-32, utf-32be, utf-32le, utf-8, windows-1250, windows-1251,
+        windows-1252, windows-1253, windows-1254, windows-1255, windows-1256, windows-1257,
+        windows-1258, windows-31j, x-big5-hkscs-2001, x-big5-solaris, x-compound_text,
+        x-euc-jp-linux, x-euc-tw, x-eucjp-open, x-ibm1006, x-ibm1025, x-ibm1046, x-ibm1097,
+        x-ibm1098, x-ibm1112, x-ibm1122, x-ibm1123, x-ibm1124, x-ibm1166, x-ibm1364,
+        x-ibm1381, x-ibm1383, x-ibm300, x-ibm33722, x-ibm737, x-ibm833, x-ibm834,
+        x-ibm856, x-ibm874, x-ibm875, x-ibm921, x-ibm922, x-ibm930, x-ibm933, x-ibm935,
+        x-ibm937, x-ibm939, x-ibm942, x-ibm942c, x-ibm943, x-ibm943c, x-ibm948, x-ibm949,
+        x-ibm949c, x-ibm950, x-ibm964, x-ibm970, x-iscii91, x-iso-2022-cn-cns, x-iso-2022-cn-gb,
+        x-iso-8859-11, x-jis0208, x-jisautodetect, x-johab, x-macarabic, x-maccentraleurope,
+        x-maccroatian, x-maccyrillic, x-macdingbat, x-macgreek, x-machebrew, x-maciceland,
+        x-macroman, x-macromania, x-macsymbol, x-macthai, x-macturkish, x-macukraine,
+        x-ms932_0213, x-ms950-hkscs, x-ms950-hkscs-xp, x-mswin-936, x-pck, x-sjis_0213,
+        x-utf-16le-bom, x-utf-32be-bom, x-utf-32le-bom, x-windows-50220, x-windows-50221,
+        x-windows-874, x-windows-949, x-windows-950, x-windows-iso2022jp
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
-      - '1643'
+      - '1368'
       Date:
-      - Tue, 12 Sep 2017 22:30:41 GMT
-      Server:
-      - Unknown
+      - Mon, 23 Apr 2018 20:03:08 GMT
     body:
       encoding: UTF-8
-      string: '{"provider":[{"PRIORITY":"COBRAND","id":2,"name":"Sprint PCS","loginUrl":"http://www.sprint.com/mysprint/pages/sl/global/index.jsp","baseUrl":"http://www.sprint.com/","favicon":"https://moneycenter.ydlstatic.com/fastlink/appscenter/siteImage.fastlink.do?access_type=APPS_CENTER_PRODUCTION&siteId=FAVICON/FAV_2.PNG","logo":"https://moneycenter.ydlstatic.com/fastlink/appscenter/siteImage.fastlink.do?access_type=APPS_CENTER_PRODUCTION&siteId=LOGO/LOGO_2_1_2.SVG","status":"Supported","mfaType":"Multiple
-        levels of strong authentication.","oAuthSite":false,"languageISOCode":"EN","primaryLanguageISOCode":"EN","countryISOCode":"US","lastModified":"2017-05-22T10:09:37Z","forgetPasswordUrl":"https://manage.sprintpcs.com/Manage/portal/!ut/p/.scr/ForgotPassword","isAutoRefreshEnabled":false,"containerAttributes":{"BILL":{"numberOfTransactionDays":90}},"containerNames":["bill"],"authType":"MFA_CREDENTIALS"},{"PRIORITY":"COBRAND","id":3,"name":"New
-        York Times","loginUrl":"http://www.nytimes.com/auth/login?URI=http://","baseUrl":"http://www.nytimes.com","favicon":"https://moneycenter.ydlstatic.com/fastlink/appscenter/siteImage.fastlink.do?access_type=APPS_CENTER_PRODUCTION&siteId=FAVICON/FAV_3.PNG","logo":"https://moneycenter.ydlstatic.com/fastlink/appscenter/siteImage.fastlink.do?access_type=APPS_CENTER_PRODUCTION&siteId=LOGO/LOGO_3_1_2.SVG","status":"Supported","oAuthSite":false,"languageISOCode":"EN","primaryLanguageISOCode":"EN","countryISOCode":"US","lastModified":"2017-02-06T09:14:21Z","isAutoRefreshEnabled":true,"containerAttributes":{"LOAN":{"numberOfTransactionDays":90}},"containerNames":["loan"],"authType":"CREDENTIALS"}]}'
+      string: '{"provider":[{"PRIORITY":"COBRAND","id":2,"name":"Sprint PCS","loginUrl":"http://www.sprint.com/mysprint/pages/sl/global/index.jsp","baseUrl":"http://www.sprint.com/","favicon":"https://yodlee-1.hs.llnwd.net/v1/FAVICON/FAV_2.PNG","logo":"https://yodlee-1.hs.llnwd.net/v1/LOGO/LOGO_2_1_1.PNG","status":"Supported","languageISOCode":"EN","primaryLanguageISOCode":"EN","countryISOCode":"US","lastModified":"2017-05-22T10:09:37Z","forgetPasswordUrl":"https://manage.sprintpcs.com/Manage/portal/!ut/p/.scr/ForgotPassword","isAutoRefreshEnabled":false,"dataset":[{"name":"BASIC_AGG_DATA","attribute":[{"name":"ACCOUNT_DETAILS","container":["bill"]},{"name":"STATEMENTS","container":["bill"]}]}],"authType":"MFA_CREDENTIALS"},{"PRIORITY":"COBRAND","id":3,"name":"New
+        York Times","loginUrl":"http://www.nytimes.com/auth/login?URI=http://","baseUrl":"http://www.nytimes.com","favicon":"https://yodlee-1.hs.llnwd.net/v1/FAVICON/FAV_3.PNG","logo":"https://yodlee-1.hs.llnwd.net/v1/LOGO/LOGO_3_1_1.PNG","status":"Supported","languageISOCode":"EN","primaryLanguageISOCode":"EN","countryISOCode":"US","lastModified":"2017-02-06T09:12:26Z","isAutoRefreshEnabled":true,"dataset":[{"name":"BASIC_AGG_DATA","attribute":[{"name":"ACCOUNT_DETAILS","container":["loan"]},{"name":"STATEMENTS","container":["loan"]},{"name":"TRANSACTIONS","container":["loan"]}]}],"authType":"CREDENTIALS"}]}'
     http_version: 
-  recorded_at: Tue, 12 Sep 2017 22:30:41 GMT
+  recorded_at: Mon, 23 Apr 2018 20:03:08 GMT
 - request:
     method: get
-    uri: https://developer.api.yodlee.com/ysl/restserver/v1/providers?skip=2&top=2
+    uri: https://developer.api.yodlee.com/ysl/providers?skip=2&top=2
     body:
       encoding: US-ASCII
       string: ''
@@ -188,11 +132,15 @@ http_interactions:
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - rest-client/2.0.2 (darwin16.6.0 x86_64) ruby/2.4.1p111
+      - rest-client/2.0.2 (darwin17.4.0 x86_64) ruby/2.5.0p0
       Content-Type:
       - application/json
+      Api-Version:
+      - '1.1'
+      Cobrand-Name:
+      - restserver
       Authorization:
-      - "{userSession=08062013_2:f60c45a652d7f859dc09ec2ed7b384652c80bf6d36f56b1f016bc8ddf5675a0830a653dbe6759661a45f688da29aa34a02a6bb4718dc5c2e7a90504892bd9989,cobSession=08062013_1:937f04d29138f6178f255a8a4c14425d4c9337341852a5a20353c6e021c4416985c11bcfa262a28becb580205c6aec60c1f028413a17d3b25473a041933d4ea8}"
+      - "{cobSession=08062013_1:22399bc7a8d968f75e2df18ade09aebe546597d28a043f29b3bda5b2c88a7ae2b41ee522f54c65f9fafd4b4d5b5aeee3cc7d7031e1c1050ee7219746b09c35c4}"
       Host:
       - developer.api.yodlee.com
   response:
@@ -200,49 +148,52 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Connection:
+      - keep-alive
       Yodlee-Ref-Id:
-      - O1505255441599j4j26k000000NLTYc
+      - p1524513788217q4C26m000000NLHYu
       Accept-Charset:
-      - big5, big5-hkscs, euc-jp, euc-kr, gb18030, gb2312, gbk, ibm-thai, ibm00858,
-        ibm01140, ibm01141, ibm01142, ibm01143, ibm01144, ibm01145, ibm01146, ibm01147,
-        ibm01148, ibm01149, ibm037, ibm1026, ibm1047, ibm273, ibm277, ibm278, ibm280,
-        ibm284, ibm285, ibm290, ibm297, ibm420, ibm424, ibm437, ibm500, ibm775, ibm850,
-        ibm852, ibm855, ibm857, ibm860, ibm861, ibm862, ibm863, ibm864, ibm865, ibm866,
-        ibm868, ibm869, ibm870, ibm871, ibm918, iso-2022-cn, iso-2022-jp, iso-2022-jp-2,
-        iso-2022-kr, iso-8859-1, iso-8859-13, iso-8859-15, iso-8859-2, iso-8859-3,
-        iso-8859-4, iso-8859-5, iso-8859-6, iso-8859-7, iso-8859-8, iso-8859-9, jis_x0201,
-        jis_x0212-1990, koi8-r, koi8-u, shift_jis, tis-620, us-ascii, utf-16, utf-16be,
-        utf-16le, utf-32, utf-32be, utf-32le, utf-8, windows-1250, windows-1251, windows-1252,
-        windows-1253, windows-1254, windows-1255, windows-1256, windows-1257, windows-1258,
-        windows-31j, x-big5-hkscs-2001, x-big5-solaris, x-compound_text, x-euc-jp-linux,
-        x-euc-tw, x-eucjp-open, x-ibm1006, x-ibm1025, x-ibm1046, x-ibm1097, x-ibm1098,
-        x-ibm1112, x-ibm1122, x-ibm1123, x-ibm1124, x-ibm1364, x-ibm1381, x-ibm1383,
-        x-ibm300, x-ibm33722, x-ibm737, x-ibm833, x-ibm834, x-ibm856, x-ibm874, x-ibm875,
-        x-ibm921, x-ibm922, x-ibm930, x-ibm933, x-ibm935, x-ibm937, x-ibm939, x-ibm942,
-        x-ibm942c, x-ibm943, x-ibm943c, x-ibm948, x-ibm949, x-ibm949c, x-ibm950, x-ibm964,
-        x-ibm970, x-iscii91, x-iso-2022-cn-cns, x-iso-2022-cn-gb, x-iso-8859-11, x-jis0208,
-        x-jisautodetect, x-johab, x-macarabic, x-maccentraleurope, x-maccroatian,
-        x-maccyrillic, x-macdingbat, x-macgreek, x-machebrew, x-maciceland, x-macroman,
-        x-macromania, x-macsymbol, x-macthai, x-macturkish, x-macukraine, x-ms932_0213,
-        x-ms950-hkscs, x-ms950-hkscs-xp, x-mswin-936, x-pck, x-sjis_0213, x-utf-16le-bom,
-        x-utf-32be-bom, x-utf-32le-bom, x-windows-50220, x-windows-50221, x-windows-874,
-        x-windows-949, x-windows-950, x-windows-iso2022jp
+      - big5, big5-hkscs, cesu-8, euc-jp, euc-kr, gb18030, gb2312, gbk, ibm-thai,
+        ibm00858, ibm01140, ibm01141, ibm01142, ibm01143, ibm01144, ibm01145, ibm01146,
+        ibm01147, ibm01148, ibm01149, ibm037, ibm1026, ibm1047, ibm273, ibm277, ibm278,
+        ibm280, ibm284, ibm285, ibm290, ibm297, ibm420, ibm424, ibm437, ibm500, ibm775,
+        ibm850, ibm852, ibm855, ibm857, ibm860, ibm861, ibm862, ibm863, ibm864, ibm865,
+        ibm866, ibm868, ibm869, ibm870, ibm871, ibm918, iso-2022-cn, iso-2022-jp,
+        iso-2022-jp-2, iso-2022-kr, iso-8859-1, iso-8859-13, iso-8859-15, iso-8859-2,
+        iso-8859-3, iso-8859-4, iso-8859-5, iso-8859-6, iso-8859-7, iso-8859-8, iso-8859-9,
+        jis_x0201, jis_x0212-1990, koi8-r, koi8-u, shift_jis, tis-620, us-ascii, utf-16,
+        utf-16be, utf-16le, utf-32, utf-32be, utf-32le, utf-8, windows-1250, windows-1251,
+        windows-1252, windows-1253, windows-1254, windows-1255, windows-1256, windows-1257,
+        windows-1258, windows-31j, x-big5-hkscs-2001, x-big5-solaris, x-compound_text,
+        x-euc-jp-linux, x-euc-tw, x-eucjp-open, x-ibm1006, x-ibm1025, x-ibm1046, x-ibm1097,
+        x-ibm1098, x-ibm1112, x-ibm1122, x-ibm1123, x-ibm1124, x-ibm1166, x-ibm1364,
+        x-ibm1381, x-ibm1383, x-ibm300, x-ibm33722, x-ibm737, x-ibm833, x-ibm834,
+        x-ibm856, x-ibm874, x-ibm875, x-ibm921, x-ibm922, x-ibm930, x-ibm933, x-ibm935,
+        x-ibm937, x-ibm939, x-ibm942, x-ibm942c, x-ibm943, x-ibm943c, x-ibm948, x-ibm949,
+        x-ibm949c, x-ibm950, x-ibm964, x-ibm970, x-iscii91, x-iso-2022-cn-cns, x-iso-2022-cn-gb,
+        x-iso-8859-11, x-jis0208, x-jisautodetect, x-johab, x-macarabic, x-maccentraleurope,
+        x-maccroatian, x-maccyrillic, x-macdingbat, x-macgreek, x-machebrew, x-maciceland,
+        x-macroman, x-macromania, x-macsymbol, x-macthai, x-macturkish, x-macukraine,
+        x-ms932_0213, x-ms950-hkscs, x-ms950-hkscs-xp, x-mswin-936, x-pck, x-sjis_0213,
+        x-utf-16le-bom, x-utf-32be-bom, x-utf-32le-bom, x-windows-50220, x-windows-50221,
+        x-windows-874, x-windows-949, x-windows-950, x-windows-iso2022jp
       Content-Type:
       - application/json;charset=UTF-8
-      Transfer-Encoding:
-      - chunked
-      Content-Encoding:
-      - gzip
-      Vary:
-      - Accept-Encoding
+      Content-Length:
+      - '2556'
       Date:
-      - Tue, 12 Sep 2017 22:30:41 GMT
-      Server:
-      - Unknown
+      - Mon, 23 Apr 2018 20:03:08 GMT
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAAL1VYW/iOBD9K758upWAkPbodSOOUxpgiw4SlISu9lZVZBIHrDN2ZDugqOK/3ziku3S1Las96YQUEvuN5834zcyTVUqxpzmRlvv5yVpGszCaJZ8s1/LDu8gLxlbHornlDjoWxzsC6x8JYwpNsdwI2GNiQ/lKMtjYal0q17YPh0PvYECFwfQysbMBuMaK/AiuwHuaCd7iAFaLnBHS24seY/yQ9zjR9t6xp97DzA8D858OevHDhxMZcdFwHn4Im0c6SJ30qjVVGutKgXFclaWQmuSwuCtwUpcm6EXFNC0ZQYzsCYQvCqS0FHyDcKW3hGuaYU0F74GV8GApphrsCswUAV6Ybyq8IbM49EVuzpsEACwl3WFZz7+/m4mKa1l/XV3FJkSs9ELktKDA0LWu+s7v3f5t97qf9Afu1a3rDP42SRRyQ/QSK3UQMn+ZdsEZ5eTbzOdY2dmGdteU24ooZWKB7z9VJgnhNP9j6cXxxzAap/eT+dKIQkGYIiKFJGo74XjNDCEtK2Koc43BifS0lnRdaQKZfbLmoReYf17t1kSGRSIxVzgzeRvjGiDv+8eO5UeT8SzxvWh8GXvnBX+9iXJuDWwWPEziZDEJkjfB1zeD47GV9D1hJSQtEQg+EeVIVVkGeSkqxuoOAimAnhHhqpIEFYIxcaCgBog8p+ZEhTBsKBCFMlcFEIlqUUlUKSJNJSGs0Vkp9YZrOUKfDGLVIlw0LEdDwUZoyOhoUSmN1gQNT7ob3SAtkPMbyrZYQhBEqqHdbhm6jPCN3iLMc/jKWJUbduDS8NZIcKNkDVa9oQ2HNx58zLnQqL089B4B5Z2AKE4JU1+RDZdz7DOpuCQZxQz53yEloE4k0lvM0bYuoWYU+rX7zjipOLQflYErWErffeMHYga5F0RClZ3MmzyWrbg7yEsWaDkLOuaoWDT+Y5JVkuq6pd5p8mAIQ/R1cxcNG2VyuKngWn9pndqleUDOrTMVB3AZII/PFtQC3K6PZd40NP5P03MwN+XA90TpHXC0HjsWzk8qwGyMNY6Jbppr20A930/SZRROZ/MJWOLnGjnHTFfzedoAg9XibhKd0zFMGuePx84XA1MJaQINO55OotQPx5OLJvfhfAzYwFu8hoUf8INu9twFp15qyhMKaebNY8sc9urEcJwvI2NM4Xb3cPtt6l4ZGnkLywDVNCXzsiON+PaZshsz0+MrbeOytHGW7oDyq8Pl+bz/Mloc5+dmi+NcGi7//5gYdK9uEqfvDm7d6+tLY+I8gUYOTRLNC85OFyHJBl5w3nzAEVTpnxsLP9jw2+78ZlW+lOsLqT4e/wV6Ru6o6wgAAA==
+      encoding: UTF-8
+      string: '{"provider":[{"PRIORITY":"COBRAND","id":4,"name":"AT&T Universal Card","loginUrl":"https://accountonline.citi.com/cards/svc/LoginGet.do?NEXT_SCREEN=/AccountSummary&langId=EN&siteId=AC","baseUrl":"https://www.accountonline.com/View?docId=Index&siteId=AC&langId=EN","favicon":"https://yodlee-1.hs.llnwd.net/v1/FAVICON/FAV_4.SVG","logo":"https://yodlee-1.hs.llnwd.net/v1/LOGO/LOGO_4_1_1.PNG","status":"Supported","languageISOCode":"EN","primaryLanguageISOCode":"EN","countryISOCode":"US","lastModified":"2014-10-13T13:15:22Z","forgetPasswordUrl":"https://online.citibank.com/US/JSO/uidn/RequestUserIDReminder.do?locale=en_US&JFP_TOKEN=PPOVZMV4","isAutoRefreshEnabled":true,"dataset":[{"name":"BASIC_AGG_DATA","attribute":[{"name":"ACCOUNT_DETAILS","container":["creditCard"]},{"name":"STATEMENTS","container":["creditCard"]},{"name":"TRANSACTIONS","container":["creditCard"]}]}],"authType":"CREDENTIALS"},{"PRIORITY":"COBRAND","id":5,"name":"Wells
+        Fargo","loginUrl":"https://connect.secure.wellsfargo.com/auth/login/present?origin=yodlee","baseUrl":"https://www.wellsfargo.com/","favicon":"https://yodlee-1.hs.llnwd.net/v1/FAVICON/FAV_5.SVG","logo":"https://yodlee-1.hs.llnwd.net/v1/LOGO/LOGO_5_1_2.SVG","status":"Supported","languageISOCode":"EN","primaryLanguageISOCode":"EN","countryISOCode":"US","lastModified":"2018-04-10T11:06:01Z","forgetPasswordUrl":"https://online.wellsfargo.com/das/cgi-bin/session.cgi?screenid=PASSWORD_HELP","isAutoRefreshEnabled":true,"loginHelp":"To
+        log in successfully, please ensure following conditions are satisfied for
+        your username at Wells Fargo.<br> Your Username: <p><ol> <li>Must be <strong>6
+        to 14 characters</strong> in length and including at least one letter.</li>
+        <li>Cannot contain 9 or more numbers</li> <li>Must not contain <strong>Special
+        Characters</strong> other than hyphens (-) or underscores (_)</li> <li>Must
+        be different than your password, ATM PIN, or Social Security number, and not
+        easy for others to guess!</li> </p> </ol>","dataset":[{"name":"ACCT_PROFILE","attribute":[{"name":"FULL_ACCT_NUMBER","container":["bank"]},{"name":"BANK_TRANSFER_CODE","container":["bank"]},{"name":"HOLDER_NAME","container":["bank"]},{"name":"HOLDER_DETAILS","container":["bank"]}]},{"name":"BASIC_AGG_DATA","attribute":[{"name":"ACCOUNT_DETAILS","container":["bank","loan","investment","creditCard"]},{"name":"HOLDINGS","container":["investment"]},{"name":"STATEMENTS","container":["loan","creditCard"]},{"name":"TRANSACTIONS","container":["bank","loan","investment","creditCard"]}]}],"authType":"MFA_CREDENTIALS"}]}'
     http_version: 
-  recorded_at: Tue, 12 Sep 2017 22:30:42 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Mon, 23 Apr 2018 20:03:08 GMT
+recorded_with: VCR 4.0.0

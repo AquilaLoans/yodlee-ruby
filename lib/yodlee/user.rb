@@ -1,8 +1,9 @@
 module Yodlee
   class User < OpenStruct
-    # POST /v1/user/register
+    # POST /user/register
+    # @see https://developer.yodlee.com/apidocs/index.php#!/user/register
     def self.create(cobrand_session, username, password, email, params = {})
-      endpoint = '/v1/user/register'
+      endpoint = '/user/register'
       payload  = {
         user: params.merge(
           login_name: username,
@@ -15,10 +16,10 @@ module Yodlee
       User.new(cobrand_session, response[:user])
     end
 
-    # POST /v1/user/login
+    # POST /user/login
     # @see https://developer.yodlee.com/apidocs/index.php#!/user/authenticateUser
     def self.login(cobrand_session, username, password)
-      endpoint = '/v1/user/login'
+      endpoint = '/user/login'
       payload  = {
         user: {
           login_name: username,
@@ -36,16 +37,16 @@ module Yodlee
       session.merge!(cobrand_session)
     end
 
-    # POST   /v1/user/credentials        Update Password
-    # POST   /v1/user/samlLogin          Saml Login
-    # POST   /v1/user/logout             User Logout
-    # POST   /v1/user/samlRegister       Saml Register
-    # PUT    /v1/user                    Update User Details
+    # POST   /user/credentials       Update Password
+    # POST   /user/samlLogin         Saml Login
+    # POST   /user/logout            User Logout
+    # POST   /user/samlRegister      Saml Register
+    # PUT    /user                   Update User Details
 
-    # GET /v1/user/accessTokens
+    # GET /user/accessTokens
     # @see https://developer.yodlee.com/apidocs/index.php#!/user/getAccessTokens
     def access_tokens(appIds)
-      endpoint = '/v1/user/accessTokens'
+      endpoint = '/user/accessTokens'
       appIds   = appIds.join(',') if appIds.is_a?(Array)
 
       response = Client.execute(:get, endpoint, session, appIds: appIds)
@@ -54,17 +55,17 @@ module Yodlee
       end
     end
 
-    # DELETE /v1/user/unregister         Delete User
+    # DELETE /user/unregister
     # @see https://developer.yodlee.com/apidocs/index.php#!/user/unregister
     def destroy
-      endpoint = '/v1/user/unregister'
+      endpoint = '/user/unregister'
 
       Client.execute(:delete, endpoint, session)
       true
     end
 
-    # GET    /v1/user                    Get User Details
-    # GET    /v1/user/credentials/token
+    # GET    /user                   Get User Detail
+    # GET    /user/credentials/token Get Token
 
     def accounts
       @accounts ||= Yodlee::AccountDelegator.new(session)

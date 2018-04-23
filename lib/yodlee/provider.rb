@@ -5,10 +5,10 @@ module Yodlee
       super(params)
     end
 
-    # GET  /v1/providers
+    # GET /providers
     # @see https://developer.yodlee.com/apidocs/index.php#!/providers/getSuggestedSiteDetail
     def self.all(cobrand_session, options = {})
-      endpoint = '/v1/providers'
+      endpoint = '/providers'
 
       response = Client.execute(:get, endpoint, cobrand_session, options)
       raw_providers = response[:provider] || []
@@ -18,18 +18,14 @@ module Yodlee
       end
     end
 
-    # GET  /v1/providers/{providerId}
+    # GET /providers/{providerId}
     # @see https://developer.yodlee.com/apidocs/index.php#!/providers/getSiteDetail
     def self.find(cobrand_session, id)
-      endpoint = "/v1/providers/#{id}"
+      endpoint = "/providers/#{id}"
 
       response = Client.execute(:get, endpoint, cobrand_session)
       Provider.new(cobrand_session, response[:provider].first)
     end
-
-    # POST /v1/providers/{providerId}        Add Account
-    # PUT  /v1/providers/{providerAccountId} Update Account
-    # GET  /v1/providers/token               Get Token
   end
 
   class ProviderDelegator

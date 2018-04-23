@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://developer.api.yodlee.com/ysl/restserver/v1/cobrand/login
+    uri: https://developer.api.yodlee.com/ysl/cobrand/login
     body:
       encoding: UTF-8
       string: '{"cobrand":{"cobrandLogin":"YODLEE_COBRAND_LOGIN","cobrandPassword":"YODLEE_COBRAND_PASSWORD","locale":"en_US"}}'
@@ -12,11 +12,15 @@ http_interactions:
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - rest-client/2.0.2 (darwin17.3.0 x86_64) ruby/2.4.1p111
+      - rest-client/2.0.2 (darwin17.4.0 x86_64) ruby/2.5.0p0
       Content-Type:
       - application/json
+      Api-Version:
+      - '1.1'
+      Cobrand-Name:
+      - restserver
       Content-Length:
-      - '121'
+      - '144'
       Host:
       - developer.api.yodlee.com
   response:
@@ -27,13 +31,13 @@ http_interactions:
       Connection:
       - keep-alive
       Yodlee-Ref-Id:
-      - f1517958172295P4z27b000000NLzYl
+      - d1524514211276k4s26p000000NLUYB
       Transfer-Encoding:
       - chunked
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Tue, 06 Feb 2018 23:02:52 GMT
+      - Mon, 23 Apr 2018 20:10:11 GMT
     body:
       encoding: UTF-8
       string: |-
@@ -42,14 +46,14 @@ http_interactions:
           "applicationId" : "3A4CAE9B71A1CCD7FF41F51006E9ED00",
           "locale" : "en_US",
           "session" : {
-            "cobSession" : "08062013_2:a5fcad970e383c6efac0778303de349dec6090954dfbd184c6fa95ffb04a23ea926c6ac31bba7fea300888229554a8d60f03738b224b7b33a744659c684dcbb0"
+            "cobSession" : "08062013_2:b042851a33c3c8eaf52a580ccbc8c5116d01c4d6ac4a1d5b3498f1f1cbba22af6a69631d02a1ed1cff44caacc6cea9ecf76faefc937cf5d63f6ecb0961368063"
           }
         }
     http_version: 
-  recorded_at: Tue, 06 Feb 2018 23:02:52 GMT
+  recorded_at: Mon, 23 Apr 2018 20:10:11 GMT
 - request:
     method: post
-    uri: https://developer.api.yodlee.com/ysl/restserver/v1/user/login
+    uri: https://developer.api.yodlee.com/ysl/user/login
     body:
       encoding: UTF-8
       string: '{"user":{"loginName":"YODLEE_USER_LOGIN","password":"YODLEE_USER_LOGIN#123","locale":"en_US"}}'
@@ -59,13 +63,17 @@ http_interactions:
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - rest-client/2.0.2 (darwin17.3.0 x86_64) ruby/2.4.1p111
+      - rest-client/2.0.2 (darwin17.4.0 x86_64) ruby/2.5.0p0
       Content-Type:
       - application/json
+      Api-Version:
+      - '1.1'
+      Cobrand-Name:
+      - restserver
       Authorization:
-      - "{cobSession=08062013_2:a5fcad970e383c6efac0778303de349dec6090954dfbd184c6fa95ffb04a23ea926c6ac31bba7fea300888229554a8d60f03738b224b7b33a744659c684dcbb0}"
+      - "{cobSession=08062013_2:b042851a33c3c8eaf52a580ccbc8c5116d01c4d6ac4a1d5b3498f1f1cbba22af6a69631d02a1ed1cff44caacc6cea9ecf76faefc937cf5d63f6ecb0961368063}"
       Content-Length:
-      - '94'
+      - '140'
       Host:
       - developer.api.yodlee.com
   response:
@@ -76,7 +84,7 @@ http_interactions:
       Connection:
       - keep-alive
       Yodlee-Ref-Id:
-      - Z1517958173996h4Z26R000000NLGYq
+      - G1524514211417E4y27e000000NLGYI
       Accept-Charset:
       - big5, big5-hkscs, cesu-8, euc-jp, euc-kr, gb18030, gb2312, gbk, ibm-thai,
         ibm00858, ibm01140, ibm01141, ibm01142, ibm01143, ibm01144, ibm01145, ibm01146,
@@ -105,17 +113,18 @@ http_interactions:
       Content-Type:
       - application/json;charset=ISO-8859-1
       Content-Length:
-      - '382'
+      - '414'
       Date:
-      - Tue, 06 Feb 2018 23:02:54 GMT
+      - Mon, 23 Apr 2018 20:10:11 GMT
     body:
       encoding: UTF-8
-      string: '{"user":{"id":10130112,"loginName":"YODLEE_USER_LOGIN","name":{"first":"Zane","last":"Pickett"},"roleType":"INDIVIDUAL","session":{"userSession":"08062013_1:ccb42a1beb7b117c483804ed008fed2ed0921232811122df28e81a62d9157b681a4cfc1fbaa3cb64e86437b7fc180f1113a55936ae80a06e261d62246e7366a4"},"preferences":{"currency":"USD","timeZone":"PST","dateFormat":"MM/dd/yyyy","locale":"en_US"}}}'
+      string: '{"user":{"id":10166524,"loginName":"YODLEE_USER_LOGIN","name":{"first":"Zane","last":"Wolfgang
+        Pickett"},"roleType":"INDIVIDUAL","session":{"userSession":"08062013_1:071383b657dfdad3c6bca70bce901a760f3f231749c38ac45a70bd7e16597167a280d054b9af59769954a32d2355674fc61a590b148288c0eb5372cd526c2c9c"},"preferences":{"currency":"USD","timeZone":"PST","dateFormat":"MM/dd/yyyy","locale":"en_US"}}}'
     http_version: 
-  recorded_at: Tue, 06 Feb 2018 23:02:54 GMT
+  recorded_at: Mon, 23 Apr 2018 20:10:11 GMT
 - request:
     method: get
-    uri: https://developer.api.yodlee.com/ysl/restserver/v1/providerAccounts
+    uri: https://developer.api.yodlee.com/ysl/providerAccounts
     body:
       encoding: US-ASCII
       string: ''
@@ -125,11 +134,15 @@ http_interactions:
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - rest-client/2.0.2 (darwin17.3.0 x86_64) ruby/2.4.1p111
+      - rest-client/2.0.2 (darwin17.4.0 x86_64) ruby/2.5.0p0
       Content-Type:
       - application/json
+      Api-Version:
+      - '1.1'
+      Cobrand-Name:
+      - restserver
       Authorization:
-      - "{userSession=08062013_1:ccb42a1beb7b117c483804ed008fed2ed0921232811122df28e81a62d9157b681a4cfc1fbaa3cb64e86437b7fc180f1113a55936ae80a06e261d62246e7366a4,cobSession=08062013_2:a5fcad970e383c6efac0778303de349dec6090954dfbd184c6fa95ffb04a23ea926c6ac31bba7fea300888229554a8d60f03738b224b7b33a744659c684dcbb0}"
+      - "{userSession=08062013_1:071383b657dfdad3c6bca70bce901a760f3f231749c38ac45a70bd7e16597167a280d054b9af59769954a32d2355674fc61a590b148288c0eb5372cd526c2c9c,cobSession=08062013_2:b042851a33c3c8eaf52a580ccbc8c5116d01c4d6ac4a1d5b3498f1f1cbba22af6a69631d02a1ed1cff44caacc6cea9ecf76faefc937cf5d63f6ecb0961368063}"
       Host:
       - developer.api.yodlee.com
   response:
@@ -140,7 +153,7 @@ http_interactions:
       Connection:
       - keep-alive
       Yodlee-Ref-Id:
-      - N1517958174601R4N27S000000NLsYa
+      - Q1524514211720B4D27e000000NLoYz
       Accept-Charset:
       - big5, big5-hkscs, cesu-8, euc-jp, euc-kr, gb18030, gb2312, gbk, ibm-thai,
         ibm00858, ibm01140, ibm01141, ibm01142, ibm01143, ibm01144, ibm01145, ibm01146,
@@ -169,12 +182,12 @@ http_interactions:
       Content-Type:
       - application/json;charset=ISO-8859-1
       Content-Length:
-      - '364'
+      - '155'
       Date:
-      - Tue, 06 Feb 2018 23:02:54 GMT
+      - Mon, 23 Apr 2018 20:10:11 GMT
     body:
       encoding: UTF-8
-      string: '{"providerAccount":[{"id":10301142,"providerId":16441,"lastUpdated":"2018-01-30T00:02:09Z","isManual":false,"createdDate":"2017-06-20","aggregationSource":"USER","refreshInfo":{"statusCode":0,"statusMessage":"OK","status":"SUCCESS","nextRefreshScheduled":"2018-01-30T22:21:49Z","lastRefreshed":"2018-01-30T00:02:10Z","lastRefreshAttempt":"2018-01-30T00:02:10Z"}}]}'
+      string: '{"providerAccount":[{"id":10741073,"aggregationSource":"USER","providerId":16441,"isManual":false,"createdDate":"2018-02-28T18:22:10Z","status":"FAILED"}]}'
     http_version: 
-  recorded_at: Tue, 06 Feb 2018 23:02:54 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Mon, 23 Apr 2018 20:10:11 GMT
+recorded_with: VCR 4.0.0
