@@ -5,10 +5,10 @@ module Yodlee
       super(params)
     end
 
-    # GET /v1/accounts
+    # GET /accounts
     # @see https://developer.yodlee.com/apidocs/index.php#!/accounts/getAccounts
     def self.all(user_session)
-      endpoint = '/v1/accounts'
+      endpoint = '/accounts'
 
       response = Client.execute(:get, endpoint, user_session)
       raw_accounts = response[:account] || []
@@ -18,26 +18,24 @@ module Yodlee
       end
     end
 
-    # GET /v1/accounts/{accountId}
+    # GET /accounts/{accountId}
     # @see https://developer.yodlee.com/apidocs/index.php#!/accounts/getAccountDetails
     def self.find(user_session, container, id)
-      endpoint = "/v1/accounts/#{id}"
+      endpoint = "/accounts/#{id}"
       payload  = { container: container }
 
       response = Client.execute(:get, endpoint, user_session, payload)
       Account.new(user_session, response[:account].first) if response[:account]
     end
 
-    # POST   /v1/accounts/{accountId}                      Update Account Status
-    # GET    /v1/accounts/investmentPlan/investmentOptions Get Investment Options
-    # GET    /v1/accounts/historicalBalances               Get Historical Balances
-    # POST   /v1/accounts                                  Add Manual Account
-    # PUT    /v1/accounts/{accountId}                      Update Account
+    # POST   /accounts Add Manual Account
+    # PUT    /accounts/{accountId} Update Account
+    # GET    /accounts/historicalBalances Get Historical Balances
 
-    # DELETE /v1/accounts/{accountId}
+    # DELETE /accounts/{accountId}
     # @see https://developer.yodlee.com/apidocs/index.php#!/accounts/deleteAccountDetail
     def destroy
-      endpoint = "/v1/accounts/#{id}"
+      endpoint = "/accounts/#{id}"
 
       Client.execute(:delete, endpoint, @session)
     end

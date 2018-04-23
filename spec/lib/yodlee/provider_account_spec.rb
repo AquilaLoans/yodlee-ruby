@@ -4,7 +4,7 @@ RSpec.describe Yodlee::ProviderAccount do
   include_context 'configure'
   include_context 'session'
 
-  let(:id)               { '10301142' }
+  let(:id)               { '10741073' }
   let(:account_provider) { described_class.find(user_session, id) }
 
   describe '.all' do
@@ -28,7 +28,7 @@ RSpec.describe Yodlee::ProviderAccount do
     end
   end
 
-  describe '#destroy' do
+  describe '#destroy', skip: 'Breaks Future Testing' do
     it 'destroys a ProviderAccount' do
       expect(account_provider.destroy).to be nil
       expect { described_class.find(user_session, id) }.to raise_error(RestClient::BadRequest)

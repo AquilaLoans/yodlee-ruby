@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://developer.api.yodlee.com/ysl/restserver/v1/cobrand/login
+    uri: https://developer.api.yodlee.com/ysl/cobrand/login
     body:
       encoding: UTF-8
       string: '{"cobrand":{"cobrandLogin":"YODLEE_COBRAND_LOGIN","cobrandPassword":"YODLEE_COBRAND_PASSWORD","locale":"en_US"}}'
@@ -15,8 +15,12 @@ http_interactions:
       - rest-client/2.0.2 (darwin17.4.0 x86_64) ruby/2.5.0p0
       Content-Type:
       - application/json
+      Api-Version:
+      - '1.1'
+      Cobrand-Name:
+      - restserver
       Content-Length:
-      - '121'
+      - '144'
       Host:
       - developer.api.yodlee.com
   response:
@@ -27,13 +31,13 @@ http_interactions:
       Connection:
       - keep-alive
       Yodlee-Ref-Id:
-      - t1519155194321i4x26K000000NLeYc
+      - h1524515077478h4F27P000000NLPYW
       Transfer-Encoding:
       - chunked
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Tue, 20 Feb 2018 19:33:14 GMT
+      - Mon, 23 Apr 2018 20:24:37 GMT
     body:
       encoding: UTF-8
       string: |-
@@ -42,14 +46,14 @@ http_interactions:
           "applicationId" : "3A4CAE9B71A1CCD7FF41F51006E9ED00",
           "locale" : "en_US",
           "session" : {
-            "cobSession" : "08062013_1:53b43f0b0d6fe510c1b468eea62023949878235216e4f554078e209a9bf120234eff2f51b84a7ca5c4823ea2751892e1d005e32c8b06bbc01072948b0e6888e0"
+            "cobSession" : "08062013_2:0f323a1f65198e87dee3edb9c5d2cda5cdb8f7a3b4a8813893608cf48d15695b9ddc39d13de964fd1f9caf5743c152aeb3695e69949dc31452b2d8b49abffc45"
           }
         }
     http_version: 
-  recorded_at: Tue, 20 Feb 2018 19:33:14 GMT
+  recorded_at: Mon, 23 Apr 2018 20:24:37 GMT
 - request:
     method: post
-    uri: https://developer.api.yodlee.com/ysl/restserver/v1/user/login
+    uri: https://developer.api.yodlee.com/ysl/user/login
     body:
       encoding: UTF-8
       string: '{"user":{"loginName":"YODLEE_USER_LOGIN","password":"YODLEE_USER_LOGIN#123","locale":"en_US"}}'
@@ -62,10 +66,14 @@ http_interactions:
       - rest-client/2.0.2 (darwin17.4.0 x86_64) ruby/2.5.0p0
       Content-Type:
       - application/json
+      Api-Version:
+      - '1.1'
+      Cobrand-Name:
+      - restserver
       Authorization:
-      - "{cobSession=08062013_1:53b43f0b0d6fe510c1b468eea62023949878235216e4f554078e209a9bf120234eff2f51b84a7ca5c4823ea2751892e1d005e32c8b06bbc01072948b0e6888e0}"
+      - "{cobSession=08062013_2:0f323a1f65198e87dee3edb9c5d2cda5cdb8f7a3b4a8813893608cf48d15695b9ddc39d13de964fd1f9caf5743c152aeb3695e69949dc31452b2d8b49abffc45}"
       Content-Length:
-      - '94'
+      - '140'
       Host:
       - developer.api.yodlee.com
   response:
@@ -76,7 +84,7 @@ http_interactions:
       Connection:
       - keep-alive
       Yodlee-Ref-Id:
-      - G1519155194603w4P26r000000NLVYW
+      - M1524515077613X4Z26f000000NLuYa
       Accept-Charset:
       - big5, big5-hkscs, cesu-8, euc-jp, euc-kr, gb18030, gb2312, gbk, ibm-thai,
         ibm00858, ibm01140, ibm01141, ibm01142, ibm01143, ibm01144, ibm01145, ibm01146,
@@ -105,17 +113,18 @@ http_interactions:
       Content-Type:
       - application/json;charset=ISO-8859-1
       Content-Length:
-      - '382'
+      - '414'
       Date:
-      - Tue, 20 Feb 2018 19:33:14 GMT
+      - Mon, 23 Apr 2018 20:24:37 GMT
     body:
       encoding: UTF-8
-      string: '{"user":{"id":10130112,"loginName":"YODLEE_USER_LOGIN","name":{"first":"Zane","last":"Pickett"},"roleType":"INDIVIDUAL","session":{"userSession":"08062013_0:b04ea6f30dbac8ddcd00a0372bd07bd5a8befcf34fbd4bfa4015d792d3b314a8010204f18195b523727f3cbbd815e8dbe022e8d8e198f75c77de766bb24b7809"},"preferences":{"currency":"USD","timeZone":"PST","dateFormat":"MM/dd/yyyy","locale":"en_US"}}}'
+      string: '{"user":{"id":10166524,"loginName":"YODLEE_USER_LOGIN","name":{"first":"Zane","last":"Wolfgang
+        Pickett"},"roleType":"INDIVIDUAL","session":{"userSession":"08062013_0:b19bdeee90a1836f6c6084161eecb8058ce139554f42ed0079eaea1883b417d00f63bf18e13f2e6e418b51d00e057aaaa30b69b5457de42765852bc98b09aa5b"},"preferences":{"currency":"USD","timeZone":"PST","dateFormat":"MM/dd/yyyy","locale":"en_US"}}}'
     http_version: 
-  recorded_at: Tue, 20 Feb 2018 19:33:14 GMT
+  recorded_at: Mon, 23 Apr 2018 20:24:37 GMT
 - request:
     method: get
-    uri: https://developer.api.yodlee.com/ysl/restserver/v1/accounts/10676951?container=bank
+    uri: https://developer.api.yodlee.com/ysl/accounts/00000000?container=bank
     body:
       encoding: US-ASCII
       string: ''
@@ -128,8 +137,12 @@ http_interactions:
       - rest-client/2.0.2 (darwin17.4.0 x86_64) ruby/2.5.0p0
       Content-Type:
       - application/json
+      Api-Version:
+      - '1.1'
+      Cobrand-Name:
+      - restserver
       Authorization:
-      - "{userSession=08062013_0:b04ea6f30dbac8ddcd00a0372bd07bd5a8befcf34fbd4bfa4015d792d3b314a8010204f18195b523727f3cbbd815e8dbe022e8d8e198f75c77de766bb24b7809,cobSession=08062013_1:53b43f0b0d6fe510c1b468eea62023949878235216e4f554078e209a9bf120234eff2f51b84a7ca5c4823ea2751892e1d005e32c8b06bbc01072948b0e6888e0}"
+      - "{userSession=08062013_0:b19bdeee90a1836f6c6084161eecb8058ce139554f42ed0079eaea1883b417d00f63bf18e13f2e6e418b51d00e057aaaa30b69b5457de42765852bc98b09aa5b,cobSession=08062013_2:0f323a1f65198e87dee3edb9c5d2cda5cdb8f7a3b4a8813893608cf48d15695b9ddc39d13de964fd1f9caf5743c152aeb3695e69949dc31452b2d8b49abffc45}"
       Host:
       - developer.api.yodlee.com
   response:
@@ -140,21 +153,21 @@ http_interactions:
       Connection:
       - keep-alive
       Yodlee-Ref-Id:
-      - t1519155208756N4F26u000000NLGYN
+      - Q1524515077800k4h27O000000NLmYE
       Transfer-Encoding:
       - chunked
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Tue, 20 Feb 2018 19:33:29 GMT
+      - Mon, 23 Apr 2018 20:24:37 GMT
     body:
       encoding: UTF-8
       string: |-
         {
           "errorCode" : "Y807",
           "errorMessage" : "Resource not found",
-          "referenceCode" : "j1519155208600e4W26r"
+          "referenceCode" : "h1524515077800v4O27p"
         }
     http_version: 
-  recorded_at: Tue, 20 Feb 2018 19:33:29 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Mon, 23 Apr 2018 20:24:37 GMT
+recorded_with: VCR 4.0.0

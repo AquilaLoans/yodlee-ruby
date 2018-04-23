@@ -1,3 +1,3 @@
-# GET /v1/derived/transactionSummary Get Transaction Summary
-# GET /v1/derived/holdingSummary     Get Holding Summary
-# GET /v1/derived/networth           Get Networth Summary
+# GET /derived/transactionSummary Get Transaction Summary
+# GET /derived/holdingSummary     Get Holding Summary
+# GET /derived/networth           Get Networth Summary

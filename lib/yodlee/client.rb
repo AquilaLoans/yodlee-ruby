@@ -64,7 +64,9 @@ module Yodlee
     def self.default_headers(session)
       {
         'Accept'       => 'application/json',
-        'Content-Type' => 'application/json'
+        'Content-Type' => 'application/json',
+        'Api-version'  => '1.1',
+        'cobrand-Name' => 'restserver'
       }.merge(authorization_headers(session))
     end
 

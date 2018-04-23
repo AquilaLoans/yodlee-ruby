@@ -4,7 +4,7 @@ RSpec.describe Yodlee::User do
   include_context 'configure'
   include_context 'session'
 
-  describe '.create' do
+  describe '.create', skip: 'Requires Sandbox Api' do
     let(:username) { 'username_04' }
     let(:password) { 'Pa$$w0rd!' }
     let(:email)    { 'example@example.com' }
@@ -43,7 +43,7 @@ RSpec.describe Yodlee::User do
     end
   end
 
-  describe '#destroy' do
+  describe '#destroy', skip: 'Breaks Future Testing' do
     it 'returns true if the user has been deleted' do
       expect(user.destroy).to eq true
     end

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://developer.api.yodlee.com/ysl/restserver/v1/cobrand/login
+    uri: https://developer.api.yodlee.com/ysl/cobrand/login
     body:
       encoding: UTF-8
       string: '{"cobrand":{"cobrandLogin":"YODLEE_COBRAND_LOGIN","cobrandPassword":"YODLEE_COBRAND_PASSWORD","locale":"en_US"}}'
@@ -12,11 +12,15 @@ http_interactions:
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - rest-client/2.0.2 (darwin16.6.0 x86_64) ruby/2.4.1p111
+      - rest-client/2.0.2 (darwin17.4.0 x86_64) ruby/2.5.0p0
       Content-Type:
       - application/json
+      Api-Version:
+      - '1.1'
+      Cobrand-Name:
+      - restserver
       Content-Length:
-      - '121'
+      - '144'
       Host:
       - developer.api.yodlee.com
   response:
@@ -24,24 +28,27 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Connection:
+      - keep-alive
       Yodlee-Ref-Id:
-      - x1505257790161R4s26T000000NLtYo
-      Content-Type:
-      - application/json;charset=UTF-8
+      - T1524512870120q4V26r000000NLvYN
       Transfer-Encoding:
       - chunked
-      Content-Encoding:
-      - gzip
-      Vary:
-      - Accept-Encoding
+      Content-Type:
+      - application/json;charset=UTF-8
       Date:
-      - Tue, 12 Sep 2017 23:09:49 GMT
-      Server:
-      - Unknown
+      - Mon, 23 Apr 2018 19:47:50 GMT
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAAEWPO4vDQAyE+/wKs3UKPXbt3XQ+x4arw9VB2gcEjB3O6UL++23i4lA1M3zS6HloGhNX/ZUlfSfTnBoEQGBHx3ci9/t8i/K4rcueGu7t0I/hq8Meh+HcTZPFyVWoHcN4BjAfbl6jzPkD5OX6c9ndLW9b3fS2n1Xvly//pgEPLQHyFU5OQNlZVAwafEauMlrfpuwKdQQqLUMm7oLHbGPMCUN2RN4CFUZyrDES2+iSMFCsun5VRKFri1YaSyIqxUHhOqIcNKkTJXEheGtqwdfh9QeOYerOIAEAAA==
+      encoding: UTF-8
+      string: |-
+        {
+          "cobrandId" : 10010352,
+          "applicationId" : "3A4CAE9B71A1CCD7FF41F51006E9ED00",
+          "locale" : "en_US",
+          "session" : {
+            "cobSession" : "08062013_0:6704f39c327357ac82a6bd214952e8ac8cfc4e299cb05a5c37386b784359b5b1f57e1cab832a400aa7c7734edae78accb98668f573121f758da081fbc44126b2"
+          }
+        }
     http_version: 
-  recorded_at: Tue, 12 Sep 2017 23:09:50 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Mon, 23 Apr 2018 19:47:50 GMT
+recorded_with: VCR 4.0.0

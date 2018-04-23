@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://developer.api.yodlee.com/ysl/restserver/v1/cobrand/login
+    uri: https://developer.api.yodlee.com/ysl/cobrand/login
     body:
       encoding: UTF-8
       string: '{"cobrand":{"cobrandLogin":"YODLEE_COBRAND_LOGIN","cobrandPassword":"YODLEE_COBRAND_PASSWORD","locale":"en_US"}}'
@@ -12,11 +12,15 @@ http_interactions:
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - rest-client/2.0.2 (darwin17.3.0 x86_64) ruby/2.4.1p111
+      - rest-client/2.0.2 (darwin17.4.0 x86_64) ruby/2.5.0p0
       Content-Type:
       - application/json
+      Api-Version:
+      - '1.1'
+      Cobrand-Name:
+      - restserver
       Content-Length:
-      - '121'
+      - '144'
       Host:
       - developer.api.yodlee.com
   response:
@@ -27,13 +31,13 @@ http_interactions:
       Connection:
       - keep-alive
       Yodlee-Ref-Id:
-      - w1517957640841q4n26a000000NLHYy
+      - B1524514455459p4S27d000000NLcYX
       Transfer-Encoding:
       - chunked
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Tue, 06 Feb 2018 22:54:00 GMT
+      - Mon, 23 Apr 2018 20:14:15 GMT
     body:
       encoding: UTF-8
       string: |-
@@ -42,14 +46,14 @@ http_interactions:
           "applicationId" : "3A4CAE9B71A1CCD7FF41F51006E9ED00",
           "locale" : "en_US",
           "session" : {
-            "cobSession" : "08062013_0:091197309e1f1f588df2e53008520400ba0d60cd204f8d657de75db34c73dc54925f6ba61da1f5ddc07e39309a75dd299a5fabe31225ab33a1af77772af3747c"
+            "cobSession" : "08062013_2:1ff9b5865497cf058a786c13581c1692112bb67c219e5f5b253bfe8fb66676a31a069c2f679ea7e69cf385fc995b5185265230206fc5d5196a01ec2c23522d7d"
           }
         }
     http_version: 
-  recorded_at: Tue, 06 Feb 2018 22:54:00 GMT
+  recorded_at: Mon, 23 Apr 2018 20:14:15 GMT
 - request:
     method: post
-    uri: https://developer.api.yodlee.com/ysl/restserver/v1/user/login
+    uri: https://developer.api.yodlee.com/ysl/user/login
     body:
       encoding: UTF-8
       string: '{"user":{"loginName":"YODLEE_USER_LOGIN","password":"YODLEE_USER_LOGIN#123","locale":"en_US"}}'
@@ -59,13 +63,17 @@ http_interactions:
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - rest-client/2.0.2 (darwin17.3.0 x86_64) ruby/2.4.1p111
+      - rest-client/2.0.2 (darwin17.4.0 x86_64) ruby/2.5.0p0
       Content-Type:
       - application/json
+      Api-Version:
+      - '1.1'
+      Cobrand-Name:
+      - restserver
       Authorization:
-      - "{cobSession=08062013_0:091197309e1f1f588df2e53008520400ba0d60cd204f8d657de75db34c73dc54925f6ba61da1f5ddc07e39309a75dd299a5fabe31225ab33a1af77772af3747c}"
+      - "{cobSession=08062013_2:1ff9b5865497cf058a786c13581c1692112bb67c219e5f5b253bfe8fb66676a31a069c2f679ea7e69cf385fc995b5185265230206fc5d5196a01ec2c23522d7d}"
       Content-Length:
-      - '94'
+      - '140'
       Host:
       - developer.api.yodlee.com
   response:
@@ -76,7 +84,7 @@ http_interactions:
       Connection:
       - keep-alive
       Yodlee-Ref-Id:
-      - M1517957641505p4h26y000000NLfYe
+      - E1524514455619h4O27e000000NLeYi
       Accept-Charset:
       - big5, big5-hkscs, cesu-8, euc-jp, euc-kr, gb18030, gb2312, gbk, ibm-thai,
         ibm00858, ibm01140, ibm01141, ibm01142, ibm01143, ibm01144, ibm01145, ibm01146,
@@ -105,17 +113,18 @@ http_interactions:
       Content-Type:
       - application/json;charset=ISO-8859-1
       Content-Length:
-      - '382'
+      - '414'
       Date:
-      - Tue, 06 Feb 2018 22:54:01 GMT
+      - Mon, 23 Apr 2018 20:14:15 GMT
     body:
       encoding: UTF-8
-      string: '{"user":{"id":10130112,"loginName":"YODLEE_USER_LOGIN","name":{"first":"Zane","last":"Pickett"},"roleType":"INDIVIDUAL","session":{"userSession":"08062013_1:0a9cd284c552db5949583be26d71cc810c2cd9cec25c54c8ef93db5529046f6f500bd8384da48aad4087050021964679301bb3561078772c4d51406d751125fe"},"preferences":{"currency":"USD","timeZone":"PST","dateFormat":"MM/dd/yyyy","locale":"en_US"}}}'
+      string: '{"user":{"id":10166524,"loginName":"YODLEE_USER_LOGIN","name":{"first":"Zane","last":"Wolfgang
+        Pickett"},"roleType":"INDIVIDUAL","session":{"userSession":"08062013_1:3a5e9f2015f4b9ba1622809d9ff3f92b8d8b5e5c89090b17dd6472e1856898d631c554dbff9c5189f2d9ad3153bf7f8b633a8696f924260fd1d95387174876ea"},"preferences":{"currency":"USD","timeZone":"PST","dateFormat":"MM/dd/yyyy","locale":"en_US"}}}'
     http_version: 
-  recorded_at: Tue, 06 Feb 2018 22:54:01 GMT
+  recorded_at: Mon, 23 Apr 2018 20:14:15 GMT
 - request:
     method: get
-    uri: https://developer.api.yodlee.com/ysl/restserver/v1/providerAccounts/10301142
+    uri: https://developer.api.yodlee.com/ysl/providerAccounts/10741073
     body:
       encoding: US-ASCII
       string: ''
@@ -125,11 +134,15 @@ http_interactions:
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - rest-client/2.0.2 (darwin17.3.0 x86_64) ruby/2.4.1p111
+      - rest-client/2.0.2 (darwin17.4.0 x86_64) ruby/2.5.0p0
       Content-Type:
       - application/json
+      Api-Version:
+      - '1.1'
+      Cobrand-Name:
+      - restserver
       Authorization:
-      - "{userSession=08062013_1:0a9cd284c552db5949583be26d71cc810c2cd9cec25c54c8ef93db5529046f6f500bd8384da48aad4087050021964679301bb3561078772c4d51406d751125fe,cobSession=08062013_0:091197309e1f1f588df2e53008520400ba0d60cd204f8d657de75db34c73dc54925f6ba61da1f5ddc07e39309a75dd299a5fabe31225ab33a1af77772af3747c}"
+      - "{userSession=08062013_1:3a5e9f2015f4b9ba1622809d9ff3f92b8d8b5e5c89090b17dd6472e1856898d631c554dbff9c5189f2d9ad3153bf7f8b633a8696f924260fd1d95387174876ea,cobSession=08062013_2:1ff9b5865497cf058a786c13581c1692112bb67c219e5f5b253bfe8fb66676a31a069c2f679ea7e69cf385fc995b5185265230206fc5d5196a01ec2c23522d7d}"
       Host:
       - developer.api.yodlee.com
   response:
@@ -140,7 +153,7 @@ http_interactions:
       Connection:
       - keep-alive
       Yodlee-Ref-Id:
-      - M1517957642061V4D26M000000NLCYs
+      - A1524514455788a4H27S000000NLNYN
       Accept-Charset:
       - big5, big5-hkscs, cesu-8, euc-jp, euc-kr, gb18030, gb2312, gbk, ibm-thai,
         ibm00858, ibm01140, ibm01141, ibm01142, ibm01143, ibm01144, ibm01145, ibm01146,
@@ -169,17 +182,17 @@ http_interactions:
       Content-Type:
       - application/json;charset=ISO-8859-1
       Content-Length:
-      - '362'
+      - '279'
       Date:
-      - Tue, 06 Feb 2018 22:54:02 GMT
+      - Mon, 23 Apr 2018 20:14:15 GMT
     body:
       encoding: UTF-8
-      string: '{"providerAccount":{"id":10301142,"providerId":16441,"lastUpdated":"2018-01-30T00:02:09Z","isManual":false,"createdDate":"2017-06-20","aggregationSource":"USER","refreshInfo":{"statusCode":0,"statusMessage":"OK","status":"SUCCESS","nextRefreshScheduled":"2018-01-30T22:21:49Z","lastRefreshed":"2018-01-30T00:02:10Z","lastRefreshAttempt":"2018-01-30T00:02:10Z"}}}'
+      string: '{"providerAccount":[{"id":10741073,"aggregationSource":"USER","providerId":16441,"isManual":false,"createdDate":"2018-02-28T18:22:10Z","status":"IN_PROGRESS","dataset":[{"name":"BASIC_AGG_DATA","additionalStatus":"ACCT_SUMMARY_RECEIVED","updateEligibility":"DISALLOW_UPDATE"}]}]}'
     http_version: 
-  recorded_at: Tue, 06 Feb 2018 22:54:02 GMT
+  recorded_at: Mon, 23 Apr 2018 20:14:15 GMT
 - request:
     method: get
-    uri: https://developer.api.yodlee.com/ysl/restserver/v1/accounts
+    uri: https://developer.api.yodlee.com/ysl/accounts
     body:
       encoding: US-ASCII
       string: ''
@@ -189,11 +202,15 @@ http_interactions:
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - rest-client/2.0.2 (darwin17.3.0 x86_64) ruby/2.4.1p111
+      - rest-client/2.0.2 (darwin17.4.0 x86_64) ruby/2.5.0p0
       Content-Type:
       - application/json
+      Api-Version:
+      - '1.1'
+      Cobrand-Name:
+      - restserver
       Authorization:
-      - "{userSession=08062013_1:0a9cd284c552db5949583be26d71cc810c2cd9cec25c54c8ef93db5529046f6f500bd8384da48aad4087050021964679301bb3561078772c4d51406d751125fe,cobSession=08062013_0:091197309e1f1f588df2e53008520400ba0d60cd204f8d657de75db34c73dc54925f6ba61da1f5ddc07e39309a75dd299a5fabe31225ab33a1af77772af3747c}"
+      - "{userSession=08062013_1:3a5e9f2015f4b9ba1622809d9ff3f92b8d8b5e5c89090b17dd6472e1856898d631c554dbff9c5189f2d9ad3153bf7f8b633a8696f924260fd1d95387174876ea,cobSession=08062013_2:1ff9b5865497cf058a786c13581c1692112bb67c219e5f5b253bfe8fb66676a31a069c2f679ea7e69cf385fc995b5185265230206fc5d5196a01ec2c23522d7d}"
       Host:
       - developer.api.yodlee.com
   response:
@@ -204,7 +221,7 @@ http_interactions:
       Connection:
       - keep-alive
       Yodlee-Ref-Id:
-      - W1517957642687V4z27J000000NLIYq
+      - j1524514455935A4X26F000000NLlYq
       Accept-Charset:
       - big5, big5-hkscs, cesu-8, euc-jp, euc-kr, gb18030, gb2312, gbk, ibm-thai,
         ibm00858, ibm01140, ibm01141, ibm01142, ibm01143, ibm01144, ibm01145, ibm01146,
@@ -233,15 +250,16 @@ http_interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
-      - '1585'
+      - '2017'
       Date:
-      - Tue, 06 Feb 2018 22:54:02 GMT
+      - Mon, 23 Apr 2018 20:14:16 GMT
     body:
       encoding: UTF-8
-      string: '{"account":[{"includeInNetWorth":true,"holderProfile":[{"name":{"displayed":"accountHolder"}}],"accountName":"TESTDATA","currentBalance":{"amount":44.78,"currency":"USD"},"accountType":"CHECKING","isManual":false,"accountNumber":"503-1123xxx","availableBalance":{"amount":54.78,"currency":"USD"},"accountStatus":"ACTIVE","refreshinfo":{"lastRefreshed":"2018-01-30T00:02:09Z","nextRefreshScheduled":"2018-01-31T09:46:40Z","lastRefreshAttempt":"2018-01-30T00:02:09Z","statusMessage":"OK","statusCode":0},"lastUpdated":"2018-01-30T00:02:09Z","isAsset":true,"createdDate":"2017-06-29T06:04:33Z","balance":{"amount":44.78,"currency":"USD"},"aggregationSource":"USER","providerId":"16441","providerAccountId":10301142,"CONTAINER":"bank","id":10690361,"providerName":"Dag
-        Site"},{"availableCash":{"amount":600,"currency":"USD"},"includeInNetWorth":true,"availableCredit":{"amount":1363,"currency":"USD"},"accountName":"CREDIT
-        CARD","accountType":"OTHER","isManual":false,"accountNumber":"************8614","accountStatus":"ACTIVE","refreshinfo":{"lastRefreshed":"2018-01-30T00:02:09Z","nextRefreshScheduled":"2018-01-30T22:21:49Z","lastRefreshAttempt":"2018-01-30T00:02:09Z","statusMessage":"OK","statusCode":0},"lastUpdated":"2018-01-30T00:02:09Z","isAsset":false,"createdDate":"2017-06-29T06:04:34Z","balance":{"amount":1636.44,"currency":"USD"},"aggregationSource":"USER","totalCashLimit":{"amount":600,"currency":"USD"},"providerId":"16441","providerAccountId":10301142,"CONTAINER":"creditCard","id":10690334,"totalCreditLine":{"amount":3000,"currency":"USD"},"providerName":"Dag
+      string: '{"account":[{"includeInNetWorth":true,"availableCredit":{"amount":1363,"currency":"USD"},"accountName":"CREDIT
+        CARD","accountType":"OTHER","isManual":false,"accountNumber":"************8614","accountStatus":"ACTIVE","lastUpdated":"2018-04-23T20:14:11Z","isAsset":false,"createdDate":"2018-02-28T18:22:20Z","balance":{"amount":1636.44,"currency":"USD"},"aggregationSource":"USER","providerId":"16441","providerAccountId":10741073,"CONTAINER":"creditCard","id":11435679,"providerName":"Dag
+        Site"},{"includeInNetWorth":true,"accountName":"TESTDATA1","currentBalance":{"amount":9044.78,"currency":"USD"},"accountType":"SAVINGS","isManual":false,"displayedName":"accountHolder","accountNumber":"503-5623xxx","availableBalance":{"amount":65454.78,"currency":"USD"},"accountStatus":"ACTIVE","lastUpdated":"2018-04-23T20:14:12Z","isAsset":true,"createdDate":"2018-02-28T18:22:19Z","balance":{"amount":9044.78,"currency":"USD"},"aggregationSource":"USER","providerId":"16441","providerAccountId":10741073,"CONTAINER":"bank","id":11435678,"dataset":[{"updateEligibility":"DISALLOW_REFRESH","lastUpdated":"2018-04-23T20:14:12Z","additionalStatus":"AVAILABLE_DATA_RETRIEVED","name":"BASIC_AGG_DATA","lastUpdateAttempt":"2018-04-23T20:14:12Z"}],"providerName":"Dag
+        Site"},{"includeInNetWorth":true,"accountName":"TESTDATA","currentBalance":{"amount":44.78,"currency":"USD"},"accountType":"CHECKING","isManual":false,"displayedName":"accountHolder","accountNumber":"503-1123xxx","availableBalance":{"amount":54.78,"currency":"USD"},"accountStatus":"ACTIVE","lastUpdated":"2018-04-23T20:14:12Z","isAsset":true,"createdDate":"2018-02-28T18:22:19Z","balance":{"amount":44.78,"currency":"USD"},"aggregationSource":"USER","providerId":"16441","providerAccountId":10741073,"CONTAINER":"bank","id":11435677,"dataset":[{"updateEligibility":"DISALLOW_REFRESH","lastUpdated":"2018-04-23T20:14:12Z","additionalStatus":"AVAILABLE_DATA_RETRIEVED","name":"BASIC_AGG_DATA","lastUpdateAttempt":"2018-04-23T20:14:12Z"}],"providerName":"Dag
         Site"}]}'
     http_version: 
-  recorded_at: Tue, 06 Feb 2018 22:54:02 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Mon, 23 Apr 2018 20:14:16 GMT
+recorded_with: VCR 4.0.0
