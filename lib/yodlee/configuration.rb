@@ -1,6 +1,6 @@
 module Yodlee
   class Configuration < OpenStruct
-    DEVELOPMENT_BASE_PATH = 'https://developer.api.yodlee.com:443/ysl/restserver'.freeze
+    DEVELOPMENT_BASE_PATH = 'https://developer.api.yodlee.com/ysl'.freeze
 
     DEFAULTS = {
       cobrand_login:    nil,

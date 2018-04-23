@@ -5,10 +5,10 @@ module Yodlee
       super(params)
     end
 
-    # GET /v1/providerAccounts
+    # GET /providerAccounts
     # @see https://developer.yodlee.com/apidocs/index.php#!/providerAccounts/getProviderAccount
     def self.all(user_session)
-      endpoint = '/v1/providerAccounts'
+      endpoint = '/providerAccounts'
 
       response = Client.execute(:get, endpoint, user_session)
       raw_provider_accounts = response[:provider_account] || []
@@ -18,37 +18,35 @@ module Yodlee
       end
     end
 
-    # GET /v1/providerAccounts/{providerAccountId}
+    # GET /providerAccounts/{providerAccountId}
     # @see https://developer.yodlee.com/apidocs/index.php#!/providerAccounts/getRefreshForProviderAccount
     def self.find(user_session, id)
-      endpoint = "/v1/providerAccounts/#{id}"
+      endpoint = "/providerAccounts/#{id}"
 
       response = Client.execute(:get, endpoint, user_session)
-      ProviderAccount.new(user_session, response[:provider_account])
+      ProviderAccount.new(user_session, response[:provider_account].first)
     end
 
-    # PUT /v1/providerAccounts
+    # PUT /providerAccounts
     # @see https://developer.yodlee.com/apidocs/index.php#!/providerAccounts/updateAccount
     # @todo Create a fully supported update
     def refresh
-      endpoint = "/v1/providerAccounts?providerAccountIds=#{id}"
+      endpoint = "/providerAccounts?providerAccountIds=#{id}"
 
       response = Client.execute(:put, endpoint, @session)
       ProviderAccount.new(user_session, response[:provider_account].first)
     end
 
-    # DELETE /v1/providerAccounts/{providerAccountId}
+    # DELETE /providerAccounts/{providerAccountId}
     # @see https://developer.yodlee.com/apidocs/index.php#!/providerAccounts/deleteAccount
     def destroy
-      endpoint = "/v1/providerAccounts/#{id}"
+      endpoint = "/providerAccounts/#{id}"
 
       Client.execute(:delete, endpoint, @session)
     end
 
-    # POST   /v1/providerAccounts                                  Add Account
-    # PUT    /v1/providerAccounts                                  Update Account
-    # PUT    /v1/providerAccounts/verification                     Verification Service
-    # GET    /v1/providerAccounts/verification/{providerAccountId}
+    # POST   /providerAccounts         Add Account
+    # GET    /providerAccounts/profile Get User Profile Details
 
     # @note This is a synthetic interface and does not directly map to any api endpoints
     def accounts

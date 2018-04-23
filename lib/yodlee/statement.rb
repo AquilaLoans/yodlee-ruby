@@ -1,1 +1,1 @@
-# GET /v1/statements
+# GET /statements

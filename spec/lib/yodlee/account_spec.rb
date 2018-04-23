@@ -4,7 +4,7 @@ RSpec.describe Yodlee::Account do
   include_context 'configure'
   include_context 'session'
 
-  let(:id)        { '10676951' }
+  let(:id)        { '11435678' }
   let(:container) { 'bank' }
   let(:account)   { described_class.find(user_session, container, id) }
 
@@ -12,7 +12,7 @@ RSpec.describe Yodlee::Account do
     let(:collection) { described_class.all(user_session) }
 
     context 'with out transactions' do
-      xit 'returns an empty array' do
+      it 'returns an empty array', skip: 'Requires an empty example' do
         expect(collection).to be_an Array
         expect(collection).to be_empty
       end
@@ -34,13 +34,15 @@ RSpec.describe Yodlee::Account do
     end
 
     context 'without an account' do
+      let(:id) { '00000000' }
+
       it 'raises an error' do
         expect { account }.to raise_error(RestClient::BadRequest)
       end
     end
   end
 
-  describe '#destroy' do
+  describe '#destroy', skip: 'Breaks Future Testing' do
     let(:id) { '10690362' }
 
     it 'deletes the account' do
@@ -55,7 +57,7 @@ RSpec.describe Yodlee::Account do
   end
 
   describe '#provider_account' do
-    let(:id) { '10690361' }
+    let(:id) { '11435678' }
 
     it 'returns an ProviderAccount' do
       expect(account.provider_account).to be_a Yodlee::ProviderAccount
@@ -77,7 +79,7 @@ RSpec.describe Yodlee::AccountDelegator do
   end
 
   describe '#find' do
-    let(:id)        { '10676951' }
+    let(:id)        { '11435678' }
     let(:container) { 'bank' }
 
     it 'delegates' do

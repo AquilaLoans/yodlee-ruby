@@ -1,9 +1,9 @@
 module Yodlee
   class Cobrand < OpenStruct
-    # POST /v1/cobrand/login
+    # POST /cobrand/login
     # @see https://developer.yodlee.com/apidocs/index.php#!/cobrand/authenticateCoBrand
     def self.login(login = Yodlee.configuration.cobrand_login, password = Yodlee.configuration.cobrand_password)
-      endpoint = '/v1/cobrand/login'
+      endpoint = '/cobrand/login'
       payload = {
         cobrand: {
           cobrandLogin: login,
@@ -17,12 +17,12 @@ module Yodlee
       Cobrand.new(response)
     end
 
-    # POST   /v1/cobrand/logout                                  Cobrand Logout
-    # GET    /v1/cobrand/publicKey                               Get Public Key
-    # DELETE /v1/cobrand/config/notifications/events/{eventName} Delete Subscription
-    # PUT    /v1/cobrand/config/notifications/events/{eventName} Update Subscription
-    # GET    /v1/cobrand/config/notifications/events             Get Subscribed Events
-    # POST   /v1/cobrand/config/notifications/events/{eventName}
+    # GET    /cobrand/config/notifications/events             Get Subscribed Events
+    # PUT    /cobrand/config/notifications/events/{eventName} Update Subscription
+    # DELETE /cobrand/config/notifications/events/{eventName} Delete Subscription
+    # POST   /cobrand/config/notifications/events/{eventName} Subscribe Event
+    # POST   /cobrand/logout                                  Cobrand Logout
+    # GET    /cobrand/publicKey                               Get Public Key
 
     def users
       @users ||= Yodlee::UserDelegator.new(session)
