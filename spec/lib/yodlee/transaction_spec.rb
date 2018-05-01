@@ -52,7 +52,7 @@ RSpec.describe Yodlee::TransactionDelegator do
 
   let(:id)        { '10676951' }
   let(:container) { 'bank' }
-  let(:delegator) { described_class.new(user_session, id, container) }
+  let(:delegator) { described_class.new(user_session, container, id) }
 
   describe '#all' do
     it 'delegates' do

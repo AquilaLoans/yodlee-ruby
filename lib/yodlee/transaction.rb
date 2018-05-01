@@ -41,9 +41,9 @@ module Yodlee
   end
 
   class TransactionDelegator
-    def initialize(user_session, account_id, container)
+    def initialize(user_session, container, account_id)
       @session         = user_session
-      @default_options = { account_id: account_id, container: container }
+      @default_options = { container: container, account_id: account_id }
     end
 
     def all(options = {})
