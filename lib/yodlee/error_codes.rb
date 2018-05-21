@@ -147,11 +147,6 @@ module Yodlee
     574
   ].freeze
 
-  # Failed data retrieval.
-  DATA_RETRIEVAL_FAILED = [
-    504 # MULTIPLE_ERROR
-  ].freeze
-
   # Partial Data retrieved.
   PARTIAL_DATA_RETRIEVED = [
     811 # PARTIAL_SUCCESS
@@ -164,6 +159,7 @@ module Yodlee
 
   # Failed data retrieval.
   DATA_RETRIEVAL_FAILED = [
+    504, # MULTIPLE_ERROR
     510, # STATUS_PROPERTY_RECORD_NOT_FOUND
     511, # STATUS_HOME_VALUE_NOT_FOUND
     405, # STATUS_USER_ABORTED_REQUEST
