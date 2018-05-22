@@ -4,7 +4,7 @@ RSpec.describe Yodlee::Transaction do
   include_context 'configure'
   include_context 'session'
 
-  let(:from_date) { DateTime.parse('2010-01-01') }
+  let(:from_date) { Time.parse('2010-01-01') }
 
   describe '.all' do
     let(:collection) { described_class.all(user_session) }
@@ -52,7 +52,7 @@ RSpec.describe Yodlee::TransactionDelegator do
 
   let(:id)        { '10676951' }
   let(:container) { 'bank' }
-  let(:delegator) { described_class.new(user_session, id, container) }
+  let(:delegator) { described_class.new(user_session, container, id) }
 
   describe '#all' do
     it 'delegates' do

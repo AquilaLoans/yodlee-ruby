@@ -65,8 +65,8 @@ module Yodlee
       {
         'Accept'       => 'application/json',
         'Content-Type' => 'application/json',
-        'Api-version'  => '1.1',
-        'cobrand-Name' => 'restserver'
+        'Api-Version'  => '1.1',
+        'Cobrand-Name' => Yodlee.configuration.cobrand
       }.merge(authorization_headers(session))
     end
 

@@ -41,7 +41,7 @@ module Yodlee
     end
 
     def transactions
-      @transactions ||= Yodlee::TransactionDelegator.new(@session, id, self.CONTAINER)
+      @transactions ||= Yodlee::TransactionDelegator.new(@session, container, id)
     end
 
     def provider_account

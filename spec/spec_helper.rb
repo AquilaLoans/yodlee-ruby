@@ -40,6 +40,7 @@ require_relative 'support/vcr'
 RSpec.shared_context 'configure', shared_context: :metadata do
   before(:each) do
     Yodlee.configure do |config|
+      config.cobrand          = ENV.fetch('YODLEE_COBRAND')
       config.cobrand_login    = ENV.fetch('YODLEE_COBRAND_LOGIN')
       config.cobrand_password = ENV.fetch('YODLEE_COBRAND_PASSWORD')
       config.base_path        = ENV.fetch('YODLEE_BASE_PATH', Yodlee::Configuration::DEVELOPMENT_BASE_PATH)

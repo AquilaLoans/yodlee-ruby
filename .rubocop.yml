@@ -18,16 +18,3 @@ Metrics/MethodLength:
 
 Style/Documentation:
   Enabled: false
-
-Style/PercentLiteralDelimiters:
-  PreferredDelimiters:
-    '%':  ()
-    '%q': ()
-    '%Q': ()
-    '%i': []
-    '%I': []
-    '%r': ()
-    '%s': ()
-    '%w': []
-    '%W': []
-    '%x': ()
