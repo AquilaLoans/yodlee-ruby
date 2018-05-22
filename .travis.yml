@@ -7,7 +7,7 @@ rvm:
 env:
   global:
     - CC_TEST_REPORTER_ID=619bcdc40d34c7803eb050e40a8c5e238dff5a3b4de96d7c0b12780a96e640fc
-    - GIT_COMMITTED_AT=$(if [ "$TRAVIS_PULL_REQUEST" == "false" && "$TRAVIS_JOB_NUMBER" =~ \.1$ ]; then git log -1 --pretty=format:%ct; else git log -1 --skip 1 --pretty=format:%ct; fi)
+    - GIT_COMMITTED_AT=$(if [[ "$TRAVIS_PULL_REQUEST" == "false" && "$TRAVIS_JOB_NUMBER" =~ \.1$ ]]; then git log -1 --pretty=format:%ct; else git log -1 --skip 1 --pretty=format:%ct; fi)
 before_install: gem install bundler -v 1.15.3
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter

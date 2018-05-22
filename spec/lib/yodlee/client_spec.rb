@@ -3,7 +3,7 @@ require 'spec_helper'
 RSpec.describe Yodlee::Client do
   describe '.deep_format_payload' do
     context 'with a depth of 1' do
-      let(:payload) { { from_date: DateTime.parse('2017-05-25') } }
+      let(:payload) { { from_date: Time.parse('2017-05-25') } }
       let(:formated_payload) { described_class.deep_format_payload(payload) }
 
       it 'coverts keys into lower camelcase' do
@@ -18,7 +18,7 @@ RSpec.describe Yodlee::Client do
     end
 
     context 'with an array' do
-      let(:payload) { { dates: [{ from_date: DateTime.parse('2017-05-25') }] } }
+      let(:payload) { { dates: [{ from_date: Time.parse('2017-05-25') }] } }
       let(:formated_payload) { described_class.deep_format_payload(payload) }
 
       it 'coverts keys into lower camelcase' do
@@ -33,7 +33,7 @@ RSpec.describe Yodlee::Client do
     end
 
     context 'with a depth of 2' do
-      let(:payload) { { transaction: { from_date: DateTime.parse('2017-05-25') } } }
+      let(:payload) { { transaction: { from_date: Time.parse('2017-05-25') } } }
       let(:formated_payload) { described_class.deep_format_payload(payload) }
 
       it 'coverts keys into lower camelcase' do

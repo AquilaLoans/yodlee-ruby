@@ -3,6 +3,7 @@
 require 'vcr'
 require 'active_support/core_ext/string'
 
+ENV['YODLEE_COBRAND']          = ENV.fetch('YODLEE_COBRAND',    'YODLEE_COBRAND')
 ENV['YODLEE_COBRAND_LOGIN']    = ENV.fetch('YODLEE_COBRAND_LOGIN',    'YODLEE_COBRAND_LOGIN')
 ENV['YODLEE_COBRAND_PASSWORD'] = ENV.fetch('YODLEE_COBRAND_PASSWORD', 'YODLEE_COBRAND_PASSWORD')
 
@@ -41,7 +42,7 @@ RSpec.configure do |config|
              .underscore
              .strip
              .gsub(/[\.#]/, '/')
-             .gsub(%r([^\w/]+), '_')
+             .gsub(%r{[^\w/]+}, '_')
              .gsub(%(/$), '')
              .gsub('_/', '/')
 

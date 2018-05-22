@@ -45,11 +45,11 @@ module Yodlee
 
     # GET /user/accessTokens
     # @see https://developer.yodlee.com/apidocs/index.php#!/user/getAccessTokens
-    def access_tokens(appIds)
+    def access_tokens(app_ids)
       endpoint = '/user/accessTokens'
-      appIds   = appIds.join(',') if appIds.is_a?(Array)
+      app_ids  = app_ids.join(',') if app_ids.is_a?(Array)
 
-      response = Client.execute(:get, endpoint, session, appIds: appIds)
+      response = Client.execute(:get, endpoint, session, appIds: app_ids)
       response.dig(:user, :access_tokens).map do |access_token|
         OpenStruct.new(access_token)
       end
